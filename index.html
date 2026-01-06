@@ -1108,12 +1108,17 @@
 
         .wheel-info h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: 20px;
+            font-size: 16px !important;
             color: #EE4000;
             margin-bottom: 15px;
             text-align: center;
             display: block;
-            white-space: nowrap;
+            white-space: normal !important;      /* Cho phép xuống dòng */
+    text-wrap: balance;        /* Tự động cân bằng độ dài các dòng (QUAN TRỌNG) */
+    word-wrap: break-word;     /* Chỉ ngắt từ khi quá dài, không ngắt lung tung */
+    line-height: 1.4;          /* Tăng khoảng cách dòng cho thoáng */
+    width: 100%; 
+    min-width: 300px;
         }
 
         .wheel-info p {
@@ -3504,7 +3509,7 @@ function closeInstaModal(event) {
 // === XPEC 3D WHEEL ===
 const xpecMemberData = [
     {
-        name: "HAPPY MID-AUTUMN FESTIVAL!",
+        name: "HAPPY\n MID-AUTUMN FESTIVAL!",
         title: "The Mid-Autumn Festival is more than just a date on the calendar; it's a time capsule filled with the sights, sounds, and tastes of childhood. The gentle pull of a paper lantern, the sweet aroma of freshly cut mooncake, and the warmth of a family gathered beneath the biggest moon of the year🌕. Our XPEC club members took a moment to share the memories they cherish most- from watching lion dances with friends and new lanterns to sneaking an extra piece of their favorite mooncake filling. As adults, the festival might look a little different, but the core joy of gathering under the full moon remains the same. We hope these memories bring a smile to your face! 🥮❤️",
         desc: "",
         img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/557764574_1192650586250531_141097948876221029_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGwfR3v4thov7vPXJjer_UPpRguFPuiPwylGC4U-6I_DFmJMQie7SSnD1KftXVEBK39PuOkAJRD3Pkkrd6QQIVL&_nc_ohc=dhzeBrdua-4Q7kNvwFWIUoH&_nc_oc=AdmN0xlRVbvhFTNMEeCPkW-EuYukub4_voMYie1gQgX8cUOBLjgcobWrMf-LrK1V_Mg&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=suB15C1hkXnHgq1-7PNEKw&oh=00_Afomc75hcxO8ljO_05BNNz_fNDiVrs5l-BqIU-DnWpZyvQ&oe=6963149F"
@@ -3644,12 +3649,8 @@ function renderXPECWheel() {
     // Hiển thị name và xử lý xuống dòng từ \n character
     wheelTitleEl.innerHTML = name.replace(/\n/g, '<br>');
     
-    // Nếu name có \n thì cho pre-wrap, ngược lại giữ nowrap
-    if (name.includes('\n')) {
-        wheelTitleEl.style.whiteSpace = 'pre-wrap';
-    } else {
-        wheelTitleEl.style.whiteSpace = 'nowrap';
-    }
+wheelTitleEl.style.whiteSpace = 'normal';
+wheelTitleEl.style.textAlign = 'center';
     
     document.getElementById('wheelDesc').innerHTML = '<p>' + xpecMemberData[idx].title + '</p><p>' + xpecMemberData[idx].desc + '</p>';
 }
