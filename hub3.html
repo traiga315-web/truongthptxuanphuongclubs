@@ -1,0 +1,3970 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Các câu lạc bộ trường THPT Xuân Phương</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+   <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color:#ffffff;
+            transition: all 0.8s ease;
+        }
+
+        /* Header - REMOVED !important */
+        header {
+            background: linear-gradient(to right, #ab1b2b, #c41e3a);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            transition: background 0.8s ease, padding 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: none;
+        }
+
+        header img.active {
+            display: block;
+        }
+
+        header .header-content {
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        /* Menu ngang */
+        nav {
+            background-color: #000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            z-index: 1000;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Menu dọc (dropdown) */
+        nav ul li ul {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: white;
+            width: 220px;
+            display: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            color: #333;
+            padding: 12px;
+            border-bottom: 1px solid #ffffff;
+            transition: all 0.4s ease;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #000000;
+            color: #fff;
+            transform: translateY(-5px) scale(1.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Nội dung */
+        main {
+            padding: 40px;
+            text-align: center;
+            transition: background 0.8s ease;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+            transition: all 0.8s ease;
+        }
+
+        /* Trang con */
+        .page {
+            display: none;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: auto;
+            transition: all 0.8s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .page p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* === PHẦN THÀNH VIÊN === */
+        .members-section {
+            margin-top: 40px;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .member-card {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        /* Shake animation - rung nhẹ với biên độ 0.5% */
+        @keyframes shake {
+            0%, 100% { transform: translateY(-5px) translateX(0); }
+            25% { transform: translateY(-5px) translateX(-0.5%); }
+            50% { transform: translateY(-5px) translateX(0.5%); }
+            75% { transform: translateY(-5px) translateX(-0.5%); }
+        }
+
+        /* === SOCIAL ICONS === */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background: #333;
+            color: #fff;
+        }
+
+        /* Color trên hover cho mỗi platform */
+        .social-icons a[href*="instagram"]:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-icons a[href*="facebook"]:hover {
+            background: #1877F2;
+        }
+
+        .social-icons a[href*="tiktok"]:hover {
+            background: #000;
+        }
+
+        .member-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #333;
+        }
+
+        .member-card h4 {
+            margin: 10px 0 5px 0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .member-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* === PHẦN LỊCH SỬ VÀ HOẠT ĐỘNG === */
+        .history-activity-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 5px solid #333;
+        }
+
+        .history-activity-section h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        /* === THEME COLORS === */
+        /* Note: Body backgrounds and header colors are now controlled by JavaScript */
+        
+        /* Hub chính: Nền trắng, khung đỏ */
+        body.theme-main .page,
+        body.theme-main .intro {
+            border: 3px solid #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        /* CLB Bóng rổ */
+        body.theme-bong-ro .page,
+        body.theme-bong-ro .intro {
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.15);
+        }
+
+        body.theme-bong-ro .card {
+            border-left: 5px solid #ff4500;
+        }
+
+        /* Basketball Club Fonts & Styling */
+        body.theme-bong-ro h1,
+        body.theme-bong-ro h2,
+        body.theme-bong-ro h3,
+        body.theme-bong-ro h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #ff4500;
+        }
+
+        body.theme-bong-ro p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .bong-ro-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #fff9f6;
+            border-radius: 10px;
+            border-left: 5px solid #ff4500;
+        }
+
+        .bong-ro-section h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #ff4500;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .bong-ro-highlight {
+            background: #fff3e0;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ff4500;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .bong-ro-highlight:hover {
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+            transform: translateX(5px);
+        }
+
+        .bong-ro-highlight strong {
+            color: #ff4500;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .bong-ro-blockquote {
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.05) 0%, rgba(255, 99, 71, 0.05) 100%);
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 5px solid #ff4500;
+            border-radius: 8px;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            font-family: 'Open Sans', sans-serif;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.1);
+        }
+
+/* CLB Bóng rổ - Hoạt động */
+#bong-ro-activity.page {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 20px 0 !important;
+    box-shadow: none !important;
+}
+
+#bong-ro-activity .card {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 20px !important;
+    box-shadow: none !important;
+}
+
+#bong-ro-activity .insta-gallery {
+    max-width: 100% !important;
+    padding: 20px !important;
+}
+
+        /* CLB Cầu lông */
+        body.theme-cau-long .page,
+        body.theme-cau-long .intro {
+            background: linear-gradient(to right, #cdeaff 0%, #ffffff 100%);
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.15);
+        }
+        body.theme-cau-long .card {
+            border-right: 5px solid #329cf3;
+        }
+
+        /* CLB Cầu lông fonts */
+        body.theme-cau-long h1,
+        body.theme-cau-long h2,
+        body.theme-cau-long h3,
+        body.theme-cau-long h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #05a0d4;
+        }
+
+        body.theme-cau-long p,
+        body.theme-cau-long .cau-long-section,
+        body.theme-cau-long .cau-long-section p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+/* CLB Cầu lông - Hoạt động */
+#cau-long-activity.page {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 20px 0 !important;
+    box-shadow: none !important;
+}
+
+#cau-long-activity .card {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 20px !important;
+    box-shadow: none !important;
+}
+
+#cau-long-activity .scroll-container {
+    max-width: 100% !important;
+}
+        
+        /* CLB Đọc sách */
+        body.theme-doc-sach .page,
+        body.theme-doc-sach .intro {
+            background: linear-gradient(to right, #d8d8d8 0%, #90dc64 100%);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.15);
+        }
+
+        body.theme-doc-sach .card {
+            border-left: 5px solid #1abe28;
+        }
+
+        /* CLB Đọc sách fonts */
+        body.theme-doc-sach h1,
+        body.theme-doc-sach h2,
+        body.theme-doc-sach h3,
+        body.theme-doc-sach h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #098e07;
+        }
+
+        body.theme-doc-sach p,
+        body.theme-doc-sach .doc-sach-section,
+        body.theme-doc-sach .doc-sach-section p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body.theme-cau-long p,
+        body.theme-cau-long .cau-long-section,
+        body.theme-cau-long .cau-long-section p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* XPEC */
+        body.theme-xpec .page,
+        body.theme-xpec .intro {
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.15);
+        }
+/* CLB XPEC - Hoạt động */
+#xpec-activity.page {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 20px 0 !important;
+    box-shadow: none !important;
+}
+
+#xpec-activity .card {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 20px !important;
+    box-shadow: none !important;
+}
+
+#xpec-activity .scroll-container {
+    max-width: 100% !important;
+}
+
+        body.theme-xpec .card {
+            border-left: 5px solid #EE4000;
+        }
+
+        /* CLB XPEC fonts */
+        body.theme-xpec h1,
+        body.theme-xpec h2,
+        body.theme-xpec h3,
+        body.theme-xpec h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #EE4000;
+        }
+
+        body.theme-xpec p,
+        body.theme-xpec .xpec-section,
+        body.theme-xpec .xpec-section p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body.theme-xpec .card {
+            padding: 30px 20px;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CLB Science header fonts */
+        body.theme-science header h1,
+        body.theme-science header p {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        body.theme-science p,
+        body.theme-science .science-section,
+        body.theme-science .science-section p {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body.theme-science .card {
+            padding: 30px 20px;
+            background: white;
+            z-index: 1;
+        }
+        .carousel-member.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes morphInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(80px) scaleX(0.3) scaleY(0.8);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(40px) scaleX(0.7) scaleY(1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scaleX(1) scaleY(1);
+            }
+        }
+
+        @keyframes morphOutLeft {
+            0% {
+                opacity: 1;
+                transform: translateX(0) scaleX(1) scaleY(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(-40px) scaleX(0.7) scaleY(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-80px) scaleX(0.3) scaleY(0.8);
+            }
+        }
+
+        @keyframes morphInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-80px) scaleX(0.3) scaleY(0.8);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(-40px) scaleX(0.7) scaleY(1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scaleX(1) scaleY(1);
+            }
+        }
+
+        @keyframes morphOutRight {
+            0% {
+                opacity: 1;
+                transform: translateX(0) scaleX(1) scaleY(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(40px) scaleX(0.7) scaleY(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(80px) scaleX(0.3) scaleY(0.8);
+            }
+        }
+
+        .carousel-member.morph-in-right {
+            animation: morphInRight 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-member.morph-out-left {
+            animation: morphOutLeft 2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: absolute;
+        }
+
+        .carousel-member.morph-in-left {
+            animation: morphInLeft 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-member.morph-out-right {
+            animation: morphOutRight 2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: absolute;
+        }
+
+        /* === NEW ANIMATIONS === */
+        @keyframes glitch {
+            0%, 100% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        @keyframes push3d {
+            0% {
+                transform: translateZ(0) rotateX(0) rotateY(0);
+            }
+            50% {
+                transform: translateZ(20px) rotateX(10deg) rotateY(10deg);
+            }
+            100% {
+                transform: translateZ(0) rotateX(0) rotateY(0);
+            }
+        }
+
+        @keyframes rippleRings {
+            0% {
+                box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(66, 153, 225, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(66, 153, 225, 0);
+            }
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            14% {
+                transform: scale(1.15);
+            }
+            28% {
+                transform: scale(1);
+            }
+            42% {
+                transform: scale(1.15);
+            }
+            70% {
+                transform: scale(1);
+            }
+        }
+
+        /* Animation classes for member cards */
+        .member-card.glitch:hover {
+            animation: glitch 0.6s ease-in-out;
+        }
+
+        .member-card.push3d:hover {
+            animation: push3d 1s ease-in-out;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .member-card.ripple:hover {
+            animation: rippleRings 2s ease-out;
+        }
+
+        .member-card.heartbeat:hover {
+            animation: heartBeat 1.3s ease-in-out;
+        }
+
+        /* === MEMBER MODAL STYLES === */
+        .member-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .member-modal.active {
+            display: flex;
+        }
+
+        .member-modal-content {
+            display: flex;
+            gap: 40px;
+            max-width: 90%;
+            align-items: center;
+            animation: slideUp 0.3s ease-out;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .member-modal-image {
+            flex: 0 0 45%;
+            max-width: 400px;
+        }
+
+        .member-modal-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .member-modal-bio {
+            flex: 1;
+            background-color: white;
+            color: #333;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .member-modal-bio h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .member-modal-bio p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === HORIZONTAL MEMBER DISPLAY === */
+        .members-horizontal {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .member-item-horizontal {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .member-item-horizontal:hover {
+            transform: scale(1.05);
+            animation: rippleRings 2s infinite;
+        }
+
+        .member-item-book:hover {
+            animation: borderGlow 2s infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(76, 175, 80, 0.5), inset 0 0 10px rgba(76, 175, 80, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(76, 175, 80, 0.8), inset 0 0 15px rgba(76, 175, 80, 0.3);
+            }
+        }
+
+        .member-item-horizontal img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-item-horizontal:hover img {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .member-item-horizontal h4 {
+            margin: 12px 0 5px 0;
+            font-size: 1rem;
+            font-family: 'Oswald', sans-serif;
+            color: #333;
+        }
+
+        .member-item-horizontal p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* === SIDE-BY-SIDE MEMBER DISPLAY === */
+        .member-item-side {
+            display: flex;
+            gap: 25px;
+            margin: 25px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        .member-item-side img {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .member-item-side-bio h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 8px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .member-item-side-bio p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .carousel-btn {
+            width: 60px;
+            height: 60px;
+            border: none;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Triangle shape for arrow - LEFT */
+        .carousel-btn.prev::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 20px solid #333;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Triangle shape for arrow - RIGHT */
+        .carousel-btn.next::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 20px solid #333;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.15);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .carousel-btn:hover::before {
+            border-right-color: #000;
+            border-left-color: #000;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        .carousel-indicator {
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        /* English Club Fonts */
+        body.theme-tieng-anh h1,
+        body.theme-tieng-anh h2,
+        body.theme-tieng-anh h3,
+        body.theme-tieng-anh h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        body.theme-tieng-anh p,
+        body.theme-tieng-anh .card,
+        body.theme-tieng-anh .intro-card {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* === ENGLISH CLUB INTRO CARDS === */
+        .english-intro-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 193, 7, 0.1);
+            border-top: 4px solid #FFC107;
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .intro-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .intro-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2);
+        }
+
+        .intro-card h3 {
+            color: #FFC107;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .intro-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* Highlight boxes for benefits and principles */
+        .highlight-box {
+            background: #FFF9E6;
+            padding: 15px 20px;
+            margin: 12px 0;
+            border-left: 4px solid #FFC107;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px) scale(0.95);
+        }
+
+        .highlight-box.scroll-visible {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .highlight-box:hover {
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+            transform: translateX(5px) scale(1.01);
+        }
+
+        .highlight-box strong {
+            color: #FFC107;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* === PHẦN GIỚI THIỆU CLB TIẾNG ANH === */
+        #tieng-anh-intro {
+            display: none;
+            background-color: rgb(0, 0, 0);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
+            max-width: 900px;
+            margin: 40px auto;
+            transition: all 0.8s ease;
+        }
+
+        #tieng-anh-intro h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #tieng-anh-intro p {
+            color: #666;
+            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        /* === 3D WHEEL FOR XPEC === */
+        #xpec-activity h2:first-of-type {
+            margin-bottom: 80px !important;
+            text-align: right !important;
+            padding-right: calc(10% + 30px) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            font-size: 72px !important;
+        }
+
+        .wheel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px;
+            max-width: 2200px;
+            margin: 40px auto;
+        }
+
+        .wheel-stage {
+            position: relative;
+            width: 750px;
+            height: 675px;
+            perspective: 3000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wheel-card {
+            position: absolute;
+            width: 600px;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform-origin: center center -750px;
+            backface-visibility: hidden;
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .wheel-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .wheel-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0, var(--darkness, 0));
+            transition: background 1s;
+        }
+
+        .wheel-info {
+            flex: 1;
+            max-width: 400px;
+            padding-right: -45px;
+        }
+
+        .wheel-info h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            color: #EE4000;
+            margin-bottom: 15px;
+            text-align: center;
+            display: block;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: nowrap;
+        }
+
+        .wheel-info p {
+            font-size: 16px;
+            color: #000000;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+            display: block;
+            margin-right: -35px;
+        }
+
+        .wheel-nav {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            transform: translateX(65px);
+        }
+
+        .wheel-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid #EE4000;
+            background: none;
+            color: #EE4000;
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .wheel-btn:hover {
+            background: #EE4000;
+            color: white;
+            box-shadow: 0 0 20px rgba(156, 39, 176, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .wheel-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .wheel-stage {
+                width: 100%;
+                max-width: 400px;
+                height: 350px;
+            }
+
+            .wheel-card {
+                width: 300px;
+                height: 220px;
+            }
+
+            .wheel-info {
+                width: 100%;
+            }
+        }
+         .hover-gallery {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            gap: 16px;
+            transition: 0.3s;
+            list-style: none;
+            padding: 0;
+            margin: 40px 0;
+        }
+
+        .hover-gallery li {
+            position: relative;
+            overflow: hidden;
+            flex: 0 0 80px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: 1.2px solid #eee;
+            box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4),
+                        -2px -5px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .hover-gallery li img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hover-gallery li video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Tăng kích thước ô cho Science Club */
+        #science-activity .hover-gallery {
+            height: 525px;
+        }
+
+        #science-activity .hover-gallery li {
+            flex: 0 0 180px;
+        }
+
+        #science-activity .hover-gallery li:hover {
+            flex: 0 1 360px;
+        }
+
+        /* Hiệu ứng hover cho CLB sách */
+        #doc-sach-activity .hover-gallery {
+            height: 300px;
+        }
+
+        #doc-sach-activity .hover-gallery li {
+            flex: 0 0 80px;
+        }
+
+        #doc-sach-activity .hover-gallery li:hover {
+            flex: 0 1 300px;
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        /* Grid layout cho video Science Club */
+        #science-activity .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            margin: 40px 0;
+        }
+
+
+        #science-activity .video-grid-featured {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        #science-activity .video-grid .video-item {
+            position: relative;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #science-activity .video-grid-featured .video-item {
+            position: relative;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        #science-activity .video-grid .video-item video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        #science-activity .video-grid .video-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.9), transparent);
+            padding: 20px;
+            color: white;
+            text-align: left;
+        }
+
+        #science-activity .video-grid .video-info h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        #science-activity .video-grid .video-info p {
+            margin: 0;
+            font-size: 13px;
+            color: #ddd;
+            gap: 0;
+        }
+
+        .hover-gallery li:hover {
+            flex: 0 1 300px;
+            transform: scale(1.1);
+            z-index: 10;
+            opacity: 1;
+        }
+
+        .hover-gallery li .gallery-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            color: #fff;
+            padding: 15px;
+            background: linear-gradient(
+                0deg, 
+                rgba(0, 0, 0, 0.8) 20%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+        }
+
+        .hover-gallery li:hover .gallery-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hover-gallery .gallery-content span {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            width: 85%;
+            text-align: center;
+        }
+
+        .hover-gallery .gallery-content h3 {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            color: #fff;
+        }
+
+        .hover-gallery .gallery-content p {
+            color: #ddd;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Khung cố định cho ảnh chủ tịch */
+        .chairman-image {
+            width: 200px;
+            height: 200px;
+            min-width: 100px;
+            min-height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-frame {
+    width: 100%;
+    max-width: 4000px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 0px;
+    background: linear-gradient(to right, #0b0b0b 0%, #4a4a4a 100%);
+    box-shadow: 0 0 30px rgba(91, 91, 91, 0.25);
+    padding: 20px 0;
+    margin: 40px auto;
+}
+
+.image-track {
+    display: flex;
+    width: calc(220px * 14);
+    animation: move 20s linear infinite;
+}
+
+.image {
+    width: 180px;
+    margin: 0 15px;
+    flex-shrink: 0;
+}
+
+.image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(223, 223, 223, 0.2);
+    transition: transform 0.4s;
+}
+
+.image img:hover {
+    transform: scale(1.08);
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.image-frame:hover .image-track {
+    animation-play-state: paused;
+}
+
+.main-gallery {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-gallery h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    padding: 30px 15px 15px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+.gallery-caption h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.gallery-caption p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Css hoạt động cầu lông */
+@keyframes scaleInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
+.scroll-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.scroll-row {
+    display: flex;
+    gap: 20px;
+    margin: 80px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll-row.single .scroll-image-block {
+    width: 100%;
+    max-width: 700px;
+}
+
+.scroll-row.double .scroll-image-block {
+    width: calc(50% - 10px);
+    min-width: 300px;
+}
+
+.scroll-row.triple .scroll-image-block {
+    width: calc(33.333% - 14px);
+    min-width: 250px;
+}
+
+.scroll-image-block {
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: scaleInOut linear;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+}
+
+.scroll-image-block img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.scroll-caption {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.scroll-intro {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 30px 20px;
+}
+
+.scroll-intro h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #2196F3;
+    font-family: 'Oswald', sans-serif;
+}
+
+.scroll-intro p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* === INSTAGRAM-STYLE GALLERY === */
+.insta-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    gap: 1em;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.insta-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insta-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Focus effect khi hover */
+.insta-gallery:has(.insta-card:hover) .insta-card:not(:hover) {
+    transform: scale(0.95);
+    opacity: 0.6;
+    filter: blur(2px);
+}
+
+.insta-card:hover {
+    transform: scale(1.12) translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.insta-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay hiện khi hover */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    padding: 20px;
+}
+
+.insta-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transform: scale(1.1);
+    letter-spacing: 3px;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    transform: translateY(3px);
+    opacity: 1;
+}
+
+/* === INSTAGRAM MODAL === */
+.insta-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.insta-modal.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content-wrapper {
+    display: flex;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Phần ảnh bên trái */
+.modal-image-section {
+    flex: 0 0 60%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Phần nội dung bên phải */
+.modal-post-section {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+/* Header với avatar */
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    padding: 2px;
+}
+
+.modal-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.modal-username {
+    font-weight: 600;
+    color: #262626;
+}
+
+/* Nội dung caption */
+.modal-caption {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+    color: #262626;
+    line-height: 1.6;
+}
+
+.caption-username {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Nút đóng */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.modal-close:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content-wrapper {
+        flex-direction: column;
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+    
+    .modal-image-section,
+    .modal-post-section {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img id="header-logo" src="image/hub/logo/xuanphuong.jpg" alt="Logo" class="active">
+    <div class="header-content">
+        <h1>CÁC CÂU LẠC BỘ TRƯỜNG THPT Xuân Phương</h1>
+        <p>Nơi rèn luyện kỹ năng – phát triển đam mê</p>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a href="#" onclick="goHome(); return false;" style="background-color: #000000; font-weight: bold;">🏠 Trang chủ</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="showClub('doc-sach'); return false;">Xuân Phương Book Club</a>
+            <ul>
+                <li><a href="#" onclick="showPage('doc-sach', 'intro'); return false;">Giới thiệu</a></li>
+                <li><a href="#" onclick="showPage('doc-sach', 'member'); return false;">Thành viên</a></li>
+                <li><a href="#" onclick="showPage('doc-sach', 'activity'); return false;">Hoạt động</a></li>
+                <li><a href="#" onclick="showPage('doc-sach', 'contact'); return false;">Liên hệ</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" onclick="showClub('xpec'); return false;">Xuân Phương English Club</a>
+            <ul>
+                <li><a href="#" onclick="showPage('xpec', 'intro'); return false;">Giới thiệu</a></li>
+                <li><a href="#" onclick="showPage('xpec', 'member'); return false;">Thành viên</a></li>
+                <li><a href="#" onclick="showPage('xpec', 'activity'); return false;">Hoạt động</a></li>
+                <li><a href="#" onclick="showPage('xpec', 'contact'); return false;">Liên hệ</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" onclick="showClub('science'); return false;">Xuân Phương Science Club</a>
+            <ul>
+                <li><a href="#" onclick="showPage('science', 'intro'); return false;">Giới thiệu</a></li>
+                <li><a href="#" onclick="showPage('science', 'member'); return false;">Thành viên</a></li>
+                <li><a href="#" onclick="showPage('science', 'activity'); return false;">Hoạt động</a></li>
+                <li><a href="#" onclick="showPage('science', 'contact'); return false;">Liên hệ</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" onclick="showClub('bong-ro'); return false;">Xuân Phương Basketball Team</a>
+            <ul>
+                <li><a href="#" onclick="showPage('bong-ro', 'intro'); return false;">Giới thiệu</a></li>
+                <li><a href="#" onclick="showPage('bong-ro', 'member'); return false;">Thành viên</a></li>
+                <li><a href="#" onclick="showPage('bong-ro', 'activity'); return false;">Hoạt động</a></li>
+                <li><a href="#" onclick="showPage('bong-ro', 'contact'); return false;">Liên hệ</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" onclick="showClub('cau-long'); return false;">Xuân Phương Badminton Club</a>
+            <ul>
+                <li><a href="#" onclick="showPage('cau-long', 'intro'); return false;">Giới thiệu</a></li>
+                <li><a href="#" onclick="showPage('cau-long', 'member'); return false;">Thành viên</a></li>
+                <li><a href="#" onclick="showPage('cau-long', 'activity'); return false;">Hoạt động</a></li>
+                <li><a href="#" onclick="showPage('cau-long', 'contact'); return false;">Liên hệ</a></li>
+            </ul>
+        </li>
+    </ul>
+     <div class="image-frame" id="image-carousel">
+        <div class="image-track">
+            <!-- 7 ẢNH GỐC -->
+            <div class="image"><img src="image/tiếng anh/sự kiện/eng (1).jpg" alt="Hoạt động CLB 1"></div>
+            <div class="image"><img src="image/bóng rổ/sự kiện/basketball (15).jpg" alt="Hoạt động CLB 2"></div>
+            <div class="image"><img src="image/đọc sách/sự kiện/book9.jpg" alt="Hoạt động CLB 3"></div>
+            <div class="image"><img src="image/bóng rổ/sự kiện/1.jpg" alt="Hoạt động CLB 4"></div>
+            <div class="image"><img src="image/khoa học/sự kiện/engine (5).jpg" alt="Hoạt động CLB 5"></div>
+            <div class="image"><img src="image/bóng rổ/sự kiện/basketball (21).jpg" alt="Hoạt động CLB 6"></div>
+            <div class="image"><img src="image/cầu lông/sự kiện/badminton (8).jpg" alt="Hoạt động CLB 7"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/538065757_122247637268186951_8300532338691669500_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFbFzfZlRDBIqTgRvCSwEoO7BLJXhLVkADsEsleEtWQAHnNb7-8-lX8OfGndxYHOi2bbCpA_Y0OX1ct0y54TGGJ&_nc_ohc=3xOPmuOyKCwQ7kNvwHgPhxD&_nc_oc=AdnGOL56QJkwkSr0aN4JJ_Eb7tLN3hPYwdaww743SYQYQ6SXhE_pPu3Fo9oruE39iX4&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=z4iPSEwjOi5ijUn_tF2tzg&oh=00_AfrXPv4aIzYEUnE8c8SWgpTMaFMM0Fxxh7VlPlxPqOnz1g&oe=6962497A" alt="Hoạt động CLB 8"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/579613744_1408655464600260_7839440279676906811_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGEkSf4iNoKVfZo0RqxZuBlzG06vtkOtsvMbTq-2Q62y2Z-hKMUB79IafbGGkCetF1wa5rdUvnI6X3R29gZjdeA&_nc_ohc=8BLFJ8m19WUQ7kNvwHTCaTh&_nc_oc=AdlFvyC34nWzlb79j98XL82-RiZXbt469wRoHI8rObXU8JK30bTp4tQLQj48e6jzsRc&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=tLKXk5cL3GkfLcSoiRwUSg&oh=00_AfrXrFo5OrdMLSSAkY-mV0pGbd9ktBS1Oz7kWFID0jeBCQ&oe=69629240" alt="Hoạt động CLB 9"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/565668682_1203410038487532_2996336150330659792_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGkrP95kMPD5Lbz9Whp968Ej_nnegaMUD2P-ed6BoxQPRjHJHpBrYfAwh0LdZxz-MgMLz_rHsHKjfJcQ6tCWmbb&_nc_ohc=XLrUSvwBqqkQ7kNvwFal8aA&_nc_oc=AdnuaSVC3vD3EHbVXWUcdIZ44a3Dvne74K-eiDV4rXlfYqkz_757YtnZxckzSHKjkCM&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=Q4pKm5DXpnHQtKEAz6J4qQ&oh=00_AfppBp8qBbKtAAHlfMzbOs39owfp9bGxTb1Xausq2eqe0A&oe=6962A06D" alt="Hoạt động CLB 10"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/557764574_1192650586250531_141097948876221029_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGwfR3v4thov7vPXJjer_UPpRguFPuiPwylGC4U-6I_DFmJMQie7SSnD1KftXVEBK39PuOkAJRD3Pkkrd6QQIVL&_nc_ohc=dhzeBrdua-4Q7kNvwE_MNFU&_nc_oc=AdlOyQUUXZXM2yT9tUGRASL_AV-DIoNxX8E8_4jgjgmAlk2wVkyTftsh7TKS-viNb8E&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=lkmAbWc6OzmPLqUcXzO3cw&oh=00_AfqFRnX16uj_hAyAZOsszxQmlZ6i4zKtq5uVhVeea50RwQ&oe=6962A41F" alt="Hoạt động CLB 11"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/607614581_910687707958995_4248684557447901239_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFiQuZpXHzdyvIZZD_Su5pR5GcpVOuPKA7kZylU648oDkTjD4KUHiYBO-FrMOFkeCQ25tfiUSNyExVQWkkTds0F&_nc_ohc=WtnTDB5boVAQ7kNvwEW6qFg&_nc_oc=AdktBQ6ZTNTJ6uN4pivjwQGJTis8ZW4Q75OcsqAc444rqJqTy95-8OTASpVWH2zw1sU&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=2l2o6n8GpIuwe9QfjVW-Vg&oh=00_Afr2ecAHHwxEyPka3WRMT6UQurtCPOomqItpZ7oKyHFdTA&oe=6962B5F6" alt="Hoạt động CLB 12"></div>
+            <!-- NHÂN ĐÔI ĐỂ CHẠY VÔ HẠN -->
+            <div class="image"><img src="image/tiếng anh/sự kiện/eng (1).jpg" alt="Hoạt động CLB 1"></div>
+            <div class="image"><img src="image/bóng rổ/sự kiện/basketball (15).jpg" alt="Hoạt động CLB 2"></div>
+            <div class="image"><img src="image/đọc sách/sự kiện/book9.jpg" alt="Hoạt động CLB 3"></div>
+            <div class="image"><img src="image/bóng rổ/sự kiện/1.jpg" alt="Hoạt động CLB 4"></div>
+            <div class="image"><img src="image/khoa học/sự kiện/engine (5).jpg" alt="Hoạt động CLB 5"></div>
+            <div class="image"><img src="image/bóng rổ/sự kiện/basketball (21).jpg" alt="Hoạt động CLB 6"></div>
+            <div class="image"><img src="image/cầu lông/sự kiện/badminton (8).jpg" alt="Hoạt động CLB 7"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/538065757_122247637268186951_8300532338691669500_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFbFzfZlRDBIqTgRvCSwEoO7BLJXhLVkADsEsleEtWQAHnNb7-8-lX8OfGndxYHOi2bbCpA_Y0OX1ct0y54TGGJ&_nc_ohc=3xOPmuOyKCwQ7kNvwHgPhxD&_nc_oc=AdnGOL56QJkwkSr0aN4JJ_Eb7tLN3hPYwdaww743SYQYQ6SXhE_pPu3Fo9oruE39iX4&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=z4iPSEwjOi5ijUn_tF2tzg&oh=00_AfrXPv4aIzYEUnE8c8SWgpTMaFMM0Fxxh7VlPlxPqOnz1g&oe=6962497A" alt="Hoạt động CLB 8"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/579613744_1408655464600260_7839440279676906811_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGEkSf4iNoKVfZo0RqxZuBlzG06vtkOtsvMbTq-2Q62y2Z-hKMUB79IafbGGkCetF1wa5rdUvnI6X3R29gZjdeA&_nc_ohc=8BLFJ8m19WUQ7kNvwHTCaTh&_nc_oc=AdlFvyC34nWzlb79j98XL82-RiZXbt469wRoHI8rObXU8JK30bTp4tQLQj48e6jzsRc&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=tLKXk5cL3GkfLcSoiRwUSg&oh=00_AfrXrFo5OrdMLSSAkY-mV0pGbd9ktBS1Oz7kWFID0jeBCQ&oe=69629240" alt="Hoạt động CLB 9"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/565668682_1203410038487532_2996336150330659792_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGkrP95kMPD5Lbz9Whp968Ej_nnegaMUD2P-ed6BoxQPRjHJHpBrYfAwh0LdZxz-MgMLz_rHsHKjfJcQ6tCWmbb&_nc_ohc=XLrUSvwBqqkQ7kNvwFal8aA&_nc_oc=AdnuaSVC3vD3EHbVXWUcdIZ44a3Dvne74K-eiDV4rXlfYqkz_757YtnZxckzSHKjkCM&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=Q4pKm5DXpnHQtKEAz6J4qQ&oh=00_AfppBp8qBbKtAAHlfMzbOs39owfp9bGxTb1Xausq2eqe0A&oe=6962A06D" alt="Hoạt động CLB 10"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/557764574_1192650586250531_141097948876221029_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGwfR3v4thov7vPXJjer_UPpRguFPuiPwylGC4U-6I_DFmJMQie7SSnD1KftXVEBK39PuOkAJRD3Pkkrd6QQIVL&_nc_ohc=dhzeBrdua-4Q7kNvwE_MNFU&_nc_oc=AdlOyQUUXZXM2yT9tUGRASL_AV-DIoNxX8E8_4jgjgmAlk2wVkyTftsh7TKS-viNb8E&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=lkmAbWc6OzmPLqUcXzO3cw&oh=00_AfqFRnX16uj_hAyAZOsszxQmlZ6i4zKtq5uVhVeea50RwQ&oe=6962A41F" alt="Hoạt động CLB 11"></div>
+            <div class="image"><img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/607614581_910687707958995_4248684557447901239_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFiQuZpXHzdyvIZZD_Su5pR5GcpVOuPKA7kZylU648oDkTjD4KUHiYBO-FrMOFkeCQ25tfiUSNyExVQWkkTds0F&_nc_ohc=WtnTDB5boVAQ7kNvwEW6qFg&_nc_oc=AdktBQ6ZTNTJ6uN4pivjwQGJTis8ZW4Q75OcsqAc444rqJqTy95-8OTASpVWH2zw1sU&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=2l2o6n8GpIuwe9QfjVW-Vg&oh=00_Afr2ecAHHwxEyPka3WRMT6UQurtCPOomqItpZ7oKyHFdTA&oe=6962B5F6" alt="Hoạt động CLB 12"></div>
+        </div>
+    </div>
+    <div> <br></div>
+</nav>
+<main>
+    <div class="main-gallery" id="main-gallery" id="intro-page" class="page" style="display: block;">
+        <h3>📸 TIN NỔI BẬT </h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/607614581_910687707958995_4248684557447901239_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFiQuZpXHzdyvIZZD_Su5pR5GcpVOuPKA7kZylU648oDkTjD4KUHiYBO-FrMOFkeCQ25tfiUSNyExVQWkkTds0F&_nc_ohc=WtnTDB5boVAQ7kNvwEW6qFg&_nc_oc=AdktBQ6ZTNTJ6uN4pivjwQGJTis8ZW4Q75OcsqAc444rqJqTy95-8OTASpVWH2zw1sU&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=K4bd2rVF4kY8Ngt_9Hu4SA&oh=00_Afq1hLa97HlESyO-uezsCKFGbF-k73jFEFGj-3yl1tbIIQ&oe=6962B5F6" alt="Thiên nhiên">
+                <div class="gallery-caption">
+                    <h4>XPBC</h4>
+                    <p>🚨[ BADMINTON XUÂN PHƯƠNG CLUB: MỞ ĐƠN TUYỂN THÀNH VIÊN GEN 5.5 ]</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/492200687_960895342893085_8986134283730575762_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGdgpjGWSqYVmy9wduSq5ie1OdpUy5YDRnU52lTLlgNGVyZ-n9uudMP6nyEA-Jb3bc5EjBnfyqXIkDmUQBtUufn&_nc_ohc=1cmKkg9PJ3gQ7kNvwGt_W6u&_nc_oc=AdnvTddkHbrrGqD3jkxkQ00LfXfy6tLDpHa8eZ9RqS0EkrZSwarIAuPhuozixVvE4X4&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=qodb7TY8CH7hM5C3IXm1IQ&oh=00_Afq0xgZp4GkMJd3XWtk1CKloKhf7e08Kf_NW4gUd2omEYw&oe=69628A0C" alt="Thành phố">
+                <div class="gallery-caption">
+                    <h4>XPEC</h4>
+                    <p>Sắp tới chúng mình sẽ có “vụ nổ lớn” gì vậy 🤯🤯 Hãy cùng đón chờ nhé
+-MEC x XPEC x IG9-</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/579613744_1408655464600260_7839440279676906811_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGEkSf4iNoKVfZo0RqxZuBlzG06vtkOtsvMbTq-2Q62y2Z-hKMUB79IafbGGkCetF1wa5rdUvnI6X3R29gZjdeA&_nc_ohc=8BLFJ8m19WUQ7kNvwHTCaTh&_nc_oc=AdlFvyC34nWzlb79j98XL82-RiZXbt469wRoHI8rObXU8JK30bTp4tQLQj48e6jzsRc&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=Yto8MSL_kUGKyBCgZP-7Lg&oh=00_AfrjzjGKmyr7wxmd2yVqliYYywyAtsIeNnPaGrDFRExWmg&oe=69629240" alt="Ẩm thực">
+                <div class="gallery-caption">
+                    <h4>XPSE</h4>
+                    <p>🎉 TỰ HÀO XUÂN PHƯƠNG! 🎉
+Xin chúc mừng các bạn học sinh Trường THPT Xuân Phương đã xuất sắc giành Giải Ba trong Cuộc thi Khoa học kỹ thuật cấp Cụm dành cho học sinh THPT năm học 2025–2026! </p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/604800452_1298296752295202_4970462547168826299_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGBfgcYNrYKN1Q0kl-wRbdGnYQIu4ZmLACdhAi7hmYsACC7ceOgItfuJj_vWPyR2dwaPuBXa3lLE9i9glpiDqun&_nc_ohc=o85oZZsXvyQQ7kNvwHC2w3C&_nc_oc=Adnc4l_byIK2-JwIBKW9BWMms1vNvhAqaqwzgAE_M87Qr2ZA0zIUePP0PLANcZ3oN1M&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=YUyqRQbR7VYX37K1QhMYtg&oh=00_Afr-ogFxBLtr365PFbssitfHmjc91VL1GfCaQhcM2viFng&oe=69628BC3" alt="Động vật">
+                <div class="gallery-caption">
+                    <h4>XPBT</h4>
+                    <p>🎁Để chào đón không khí giáng sinh,XPBT cũng đã tổ chức XMAS để mọi người thể hiện tình cảm với nhau bằng những món quà nhỏ xinh và những hoạt động tăng tính đoàn kết.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/522749654_1129647539217503_1527799055553220110_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE2eBs-f6VFYrVlORH4Cfz1-6Z0qfxe60v7pnSp_F7rS8G8_k3gJQ_uUMZtm7taXzS3AJr3A4fU5kB_xLOx-syJ&_nc_ohc=InWBbpHnjt0Q7kNvwFRlFbc&_nc_oc=Adki--2fEqRivDM5wgPKbwzS-lppygemZ86eIpJKj6Fvo2LJJ-Wom-UGdKFt-7q_S5g&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=T4uoLFZyUzgdlBTJoJcA6A&oh=00_AfpClRPD8WbgYDogs49JftNXXjKHoRO3sLna5HubCsKDOQ&oe=6962BA74" alt="Động vật">
+                <div class="gallery-caption">
+                    <h4>XPEC</h4>
+                    <p>🎉 CLB TIẾNG ANH XPEC “MỞ CỬA” ĐÓN THÀNH VIÊN GEN 6!
+Cậu có phải là người yêu thích tiếng Anh, muốn "level up" khả năng ngôn ngữ, hay đang tìm kiếm một ngôi nhà chung siêu năng động để phát triển bản thân và kết nối với những người bạn mới không? Nếu câu trả lời là có, thì CLB Tiếng Anh XPEC chính là "chân ái" dành cho cậu đó!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/494442108_1069799235202334_3587361169661300797_n.jpg?stp=cp6_dst-jpg_s1080x2048_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeELeO6RPxuAsxIKwUXe-g_IcZnBFkOwAIpxmcEWQ7AAigM6BGobz4S01j5MVquvGTolV_XIfyNFGFR2ltDCK-58&_nc_ohc=YB67aQZWTZ8Q7kNvwHDtMbb&_nc_oc=AdnSEnrktA8lZpc8-xvzToMON90B7WQK4Fs50Ylc2SkdCj9ku7Nbbj6rc1t7eRgHSNI&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=ZhT3fgzq6isqPSyXLjtONQ&oh=00_AfqTHl_so1-2D1es7BI1gm4sYM3PTqEZ81TjDBCNAR9qyA&oe=6962B676" alt="Động vật">
+                <div class="gallery-caption">
+                    <h4>XPEC</h4>
+                    <p>KỶ NIỆM 50 NĂM GIẢI PHÓNG MIỀN NAM, THÔNG NHẤT ĐẤT NƯỚC 🇻🇳</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/549198596_1171277585034111_2792772178949009481_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGaF8E6hKRxSmSJUfvp01yU10Io1UgtA5fXQijVSC0DlxtM3RaYQLwevXxogKiucLVpLD-kKT1aJMauYoTw0tJ4&_nc_ohc=hHsTkoxQBTcQ7kNvwEic_9X&_nc_oc=AdltiEKUTWvUhOzYnBQ-ptRCZId8Kcz3r6Os0wE7gakgxZ9nCfQ6Ht_i6QfHgoNWi8w&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=HwuOYSyyahU2nE2zTquVqw&oh=00_AfpmIpuOBKMuXETkQRPOcMDF2T2OGMAaitXTGSyUofoN2g&oe=69629988" alt="Động vật">
+                <div class="gallery-caption">
+                    <h4>XBC</h4>
+                    <p>XUAN PHUONG ARTSPHERE CLUB MẠNH TAY CHIÊU MỘ CÁC TÂN SINH GEN 8🚨🚨🚨</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/476350413_1001055078723030_6262835397212118581_n.jpg?stp=c0.17.1280.668a_dst-jpg_s1080x2048_tt6&_nc_cat=102&ccb=1-7&_nc_sid=75d36f&_nc_eui2=AeEy-u3jekVC0VcBqBqVsb9OuzTZNDLNHlm7NNk0Ms0eWXJSKY4SQT4dIFFET2FN4Gt7nQyEFypnS8KBI6VVW5ls&_nc_ohc=bdhN1eY5eK8Q7kNvwE2DHWz&_nc_oc=Adm9c-MP8pim1VGYwyatNkxS-yyAPzImBhdt01whLCzib-4ZqA9C8ueHy5S8hJA-N1M&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=SazrnCbNgouJoakMlVfCcg&oh=00_Afr-k3YJqxb1bmYRq1ao3SW6hL95XM1v6ikGOMcP2cy9-w&oe=696289A7" alt="Động vật">
+                <div class="gallery-caption">
+                    <h4>XBC</h4>
+                    <p>Chào mừng các bạn đã đến với gian hàng của XBC!!! Bật mí cho các bạn biết một điều nhé, sắp tới đây gian hàng XBC của chúng mình sẽ vô cùng náo nhiệt với event vô cùng thú vị. Mỗi thành viên trong CLB sẽ phục vụ các bạn những chiếc lồng đèn nhỏ xinh hay những chiếc mặt nạ vô cùng điệu nghệ. Và thật tuyệt vời khi tất cả những sản phẩm này đều là do tự tay chúng mình dùng tâm huyết để gửi đến tất cả mọi người !!! Hãy cùng chúng mình đón chờ những sản phẩm chất lượng nhất đến từ nhà XBC nhân dịp trung thu ( rằm tháng 8 âm lịch).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CLB Đọc sách / ArtSphere -->
+    <div id="doc-sach-intro" class="page">
+        <h2>ArtSphere - Giới thiệu</h2>
+        
+        <!-- Component 1: Lời mở đầu -->
+        <div class="doc-sach-section" style="margin: 30px 0; padding: 25px; background-color: #f1f8e9; border-left: 5px solid #4CAF50; border-radius: 8px;">
+            <p style="font-size: 17px; line-height: 1.8; color: #333; font-family: 'Open Sans', sans-serif;">
+                Hi, chúng mình là XBC (XP Book Club) đâyyyyy. Chúng mình rất zuiii vì thấy bạn ở đây ^^ CLB được thành lập với mong muốn lan toả sự yêu thích sách đến với các bạn học sinh của nhà trường mà các bác chả biết thừa sách có những giá trị tốt đẹp như nào rùi còn gì nữa nhưng <span style="font-weight: 700; color: #4CAF50;">"GOOD THINGS TAKE TIME - NHỮNG ĐIỀU ĐẸP ĐẼ, TUYỆT VỜI CẦN THỜI GIAN ĐỂ NỖ LỰC"</span> chính vì vậy đôi khi bạn sẽ bị nản, bị lười đọc đó. Đừng lo vì tụi tui ở đây nè, chúng mình cùng đọc sách, trang trí và dọn dẹp thư viện của nhà trường để không gian đọc trở nên thân thiện hơn và hơn cả là những nội dung sách mà các bác đã đọc sẽ được áp dụng vào thực tế nữa luôn.
+            </p>
+        </div>
+
+        <!-- Component 2: Club Info -->
+        <div class="doc-sach-section" style="margin: 30px 0; padding: 25px; background-color: #f1f8e9; border-left: 5px solid #4CAF50; border-radius: 8px;">
+            <p style="font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif;">
+                <b><span style="font-family: 'Oswald', sans-serif; font-size: 18px; color: #4CAF50; margin-bottom: 10px;">Tên câu lạc bộ:</b></span> CLB ArtSphere<br><br>
+                <b><span style="font-family: 'Oswald', sans-serif; font-size: 18px; color: #4CAF50; margin-bottom: 10px;">Ngày thành lập:</b></span> 6/10/2020<br><br>
+                <b><span style="font-family: 'Oswald', sans-serif; font-size: 18px; color: #4CAF50; margin-bottom: 10px;">Địa điểm thành lập:</b></span> Trường THPT Xuân Phương<br><br>
+                <b><span style="font-family: 'Oswald', sans-serif; font-size: 18px; color: #4CAF50; margin-bottom: 10px;">SLOGAN:</b></span> <em>Gọi chúng mình là nhà, chúng mình là Asper🌱</em>
+            </p>
+        </div>
+
+        <!-- Component 3: Vision & Mission -->
+        <div class="doc-sach-section" style="margin: 30px 0; padding: 25px; background-color: #f1f8e9; border-left: 5px solid #4CAF50; border-radius: 8px;">
+            <p style="font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif;">
+                Chào mừng các bạn đến với ArtSphere – một chương mới trong hành trình phát triển của chúng tớ!
+                <br><br>
+                Nghệ thuật không chỉ là những màn trình diễn trên sân khấu, mà còn là nhịp cầu tuyệt vời nhất để kết nối những tâm hồn. Với định hướng mở rộng tầm ảnh hưởng, ArtSphere ra đời để trở thành một hệ sinh thái sáng tạo, nơi mỗi cá nhân đều có thể tìm thấy "vùng trời" của riêng mình.
+                <br><br>
+                Chúng tớ không chỉ dừng lại ở những hoạt động rèn luyện thể chất, mà còn hướng tới việc đưa nghệ thuật và kỹ năng mềm đến gần hơn với cộng đồng, song không chỉ là vận động, mà còn là tư duy thẩm mỹ, diễn xuất và cảm thụ nghệ thuật.
+                <br><br>
+                ArtSphere tin rằng, mỗi người đều là một nghệ sĩ trong chính cuộc đời mình. Hãy cùng chúng tôi vẽ nên những màu sắc mới trên hành trình này!
+            </p>
+        </div>
+
+        <!-- Component 4: Club Spirit & Pmrinciples -->
+        <div class="doc-sach-section" style="margin: 30px 0; padding: 25px; background-color: #f1f8e9; border-left: 5px solid #4CAF50; border-radius: 8px;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #4CAF50; margin-bottom: 20px;">Ở câu lạc bộ ArtSphere chúng mình, mọi người đều hướng tới:</h3>
+            <ul style="margin-left: 20px; font-size: 16px; line-height: 2; color: #333; font-family: 'Open Sans', sans-serif;">
+                <li style="margin: 15px 0;">
+                    <span style="font-weight: 700; color: #4CAF50;">Tinh thần văn minh, lịch sự, hướng tới nhân văn</span>
+                </li>
+                <li style="margin: 15px 0;">
+                    <span style="font-weight: 700; color: #4CAF50;">Tự tin thể hiện, tự tin phát triển nét riêng của bản thân</span>
+                </li>
+                <li style="margin: 15px 0;">
+                    <span style="font-weight: 700; color: #4CAF50;">Niềm tin rằng mọi sự khác biệt đều đáng tôn trọng, sáng tạo là trên hết</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="doc-sach-member" class="page">
+        <div class="card">
+            <h2>ArtSphere - Thành viên</h2>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                <img src="image/đọc sách/nhân sự/nguyen-khanh-hoa.jpg" alt="Chủ tịch" class="chairman-image"> 
+                <div>
+                    <p><b>Chủ tịch CLB:</b> Nguyễn Khánh Hoà</p>
+                    <p><i>"Gọi chúng mình là nhà, chúng mình là Asper🌱"</i></p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 30px 0 20px 0;">Thành viên tiêu biểu</h3>
+            <div class="members-horizontal">
+                <div class="member-item-horizontal member-item-book" onclick="openMemberModal(event)">
+                    <img src="image/đọc sách/nhân sự/macdinh.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Nguyễn Phương Nhi</h4>
+                    <p>Phó chủ tịch</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Nguyễn Phương Nhi</h2>
+                        <p>Phó chủ tịch ArtSphere</p>
+                        <p>Năm học: 2024</p>
+                        <p>Lĩnh vực: Quản lý hoạt động hoạt động, mục tiêu, tài nguyên của clb.</p>
+                        <p>"Mình luôn muốn có những ý tưởng, thiết kế đặc biệt để biến tấu sách trở nên gần gũi, đáng iu hơn với các bạn học sinh nhà trường, từ đó lan toả văn hoá đọc đó :3."</p>
+                    </div>
+                </div>
+
+                <div class="member-item-horizontal member-item-book" onclick="openMemberModal(event)">
+                    <img src="image/đọc sách/nhân sự/phuong-van-nhi.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Phương Vân Nhi</h4>
+                    <p>Chuyên môn</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Phương Vân Nhi</h2>
+                        <p>Chuyên môn</p>
+                        <p>Năm học: 2024</p>
+                        <p>Lĩnh vực: Tổ chức các buổi thảo luận sách, workshop sáng tạo.</p>
+                        <p>"Clb sẽ rất thích hợp cho những bạn có khả năng sáng tạo - một chút hài hước và chăm chỉ nhaaa."</p>
+                    </div>
+                </div>
+
+                <div class="member-item-horizontal member-item-book" onclick="openMemberModal(event)">
+                    <img src="image/đọc sách/nhân sự/truc-lam.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Trúc Lâm</h4>
+                    <p>Truyền thông</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Trúc Lâm</h2>
+                        <p>Truyền thông</p>
+                        <p>Năm học: 2024</p>
+                        <p>Lĩnh vực: Quản lý media, liên lạc với thành viên và bạn đọc.</p>
+                        <p>"Một cộng đồng yêu sách là một cộng đồng yêu tư duy và sáng tạo. Mình luôn muốn lan tỏa tinh thần yêu sách đến mọi người."</p>
+                    </div>
+                </div>
+
+                <div class="member-item-horizontal member-item-book" onclick="openMemberModal(event)">
+                    <img src="image/đọc sách/nhân sự/duy-duc.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Vũ Duy Đức</h4>
+                    <p>Thành viên</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Vũ Duy Đức</h2>
+                        <p>Thành viên tích cực</p>
+                        <p>Năm học: 2024</p>
+                        <p>Lĩnh vực: Hỗ trợ sự kiện, tương tác cộng đồng bạn đọc.</p>
+                        <p>"Vì sự nghiệp trăm năm lan toả tinh thần đọc sách. Dẫu vào núi đao biển lửa quyết cũng làm"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member Modal -->
+        <div class="member-modal" id="memberModal2" onclick="closeMemberModal(event, 'memberModal2')">
+            <div class="member-modal-content" onclick="event.stopPropagation()">
+                <div class="member-modal-image">
+                    <img src="" alt="Thành viên" id="modalImage2">
+                </div>
+                <div class="member-modal-bio" id="modalBio2">
+                    <!-- Bio content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="doc-sach-activity" class="page">
+    <h2>ArtSphere - Hoạt động</h2>
+    
+    <div class="card" style="margin-bottom: 40px;">
+        <h3 style="color: #4CAF50; margin-bottom: 15px;">📅 Lịch trình hoạt động</h3>
+        <p><strong>Thứ 3 & Thứ 5:</strong> Đọc sách cùng nhau, thảo luận về các tác phẩm nổi tiếng (17h00 - 18h30)</p>
+        <p><strong>Thứ 7:</strong> Thảo luận sách tháng (14h00 - 16h00)</p>
+        <p><strong>Chủ nhật cuối tháng:</strong> Giao lưu tại các hội chợ</p>
+    </div>
+
+    <!-- HOVER GALLERY - Hoạt động nổi bật -->
+    <div style="margin: 40px 0;">
+        <h3 style="text-align: center; color: #4CAF50; margin-bottom: 20px;">🎯 HOẠT ĐỘNG NỔI BẬT</h3>
+        <ul class="hover-gallery">
+            <li>
+                <img src="image/đọc sách/sự kiện/book (4).jpg" alt="Reading Session">
+                <div class="gallery-content">
+                    <span>
+                        <h3>Buổi Đọc Sách</h3>
+                        <p>Cùng nhau đắm chìm vào thế giới văn chương mỗi tuần</p>
+                    </span>
+                </div>
+            </li>
+            <li>
+                <img src="image/đọc sách/sự kiện/book (8).jpg" alt="Book Discussion">
+                <div class="gallery-content">
+                    <span>
+                        <h3>Thảo Luận Sách</h3>
+                        <p>Chia sẻ cảm nhận và góc nhìn về những cuốn sách yêu thích</p>
+                    </span>
+                </div>
+            </li>
+            <li>
+                <img src="image/đọc sách/sự kiện/book (7).jpg" alt="Author Talk">
+                <div class="gallery-content">
+                    <span>
+                        <h3>Gặp Gỡ Tác Giả</h3>
+                        <p>Giao lưu trực tiếp với các tác giả nổi tiếng</p>
+                    </span>
+                </div>
+            </li>
+            <li>
+                <img src="image/đọc sách/sự kiện/book9.jpg" alt="Book Fair">
+                <div class="gallery-content">
+                    <span>
+                        <h3>Winter sun, pages spun </h3>
+                        <p>Trang sách dưới cái nắng cuối đông làm lòng mình ấm rực lên bởi những câu chuyện và xúc cảm..</p>
+                    </span>
+                </div>
+            </li>
+            <li>
+                <img src="image/đọc sách/sự kiện/Christmas trees, winter breeze.  lật mở trang sách mới, đón nhận câu chuyện và cùng cộng hưởng không khí giáng sinh chứ nhỉ_!.jpg" alt="Book Review">
+                <div class="gallery-content">
+                    <span>
+                        <h3>Review Sách</h3>
+                        <p>Viết và chia sẻ những bài review sách chất lượng</p>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Thêm phần thành tích -->
+    <div class="card" style="margin-top: 40px;">
+        <h3 style="color: #4CAF50; margin-bottom: 15px;">🏆 Thành tích nổi bật</h3>
+        <ul style="text-align: left; padding-left: 20px; line-height: 2;">
+            <li>📖 Đã tổ chức 25 buổi đọc sách trong năm 2025.</li>
+            <li>👥 Thu hút hơn 18 thành viên tham gia.</li>
+            <li>📚 Review hơn 100 đầu sách khác nhau và giới thiệu cho toàn trường.</li>
+            <li>✍️ Gặp gỡ 4 tác giả nổi tiếng.</li>
+            <li>🎉 Tổ chức thành công 3 hội chợ sách.</li>
+        </ul>
+        <hr style="margin: 60px 0; border: 2px solid #ddd;">
+    </div>
+</div>
+
+    <div id="doc-sach-contact" class="page">
+        <div class="card">
+            <h2>Hỗ trợ & Giải đáp — ArtSphere</h2>
+            <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">"Good things take time", nhưng thời gian để bạn nhấn nút đăng ký thì chỉ mất 30 giây thuiii! Nếu bạn muốn biến việc đọc sách không còn là "cực hình" mà là những giờ phút decor thư viện cực chill, hay đơn giản là muốn cùng tụi mình lan tỏa những điều tử tế, thì đừng ngần ngại nhé.<br><br>👇 Click ngay vào chiếc link dưới đây để trở thành một mẩu của XBC:</p>
+
+            <div style="margin-top:30px;">
+                <a href="https://forms.gle/nGtV3afQ464Zq9DBA" target="_blank" rel="noopener" style="margin:6px; padding:10px 14px; background:#0077cc; color:#fff; border-radius:6px; text-decoration:none; display:inline-block;">📝 Gửi câu hỏi (Google Form)</a>
+            </div>
+                        <p style="color:#868d86;">📧 xuanphuongbookclub@gmail.com</p>
+            <div class="social-icons" style="margin-top:20px;">
+                <a href="https://www.facebook.com/xpbookclub" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- XPEC -->
+    <div id="xpec-intro" class="page">
+        <h2></span>XPEC - Giới thiệu</h2>
+        
+        <!-- Hộp 1: Welcome Message -->
+        <div class="xpec-section" style="margin: 30px 0; padding: 25px; background-color: #fffcd1; border-left: 5px solid #EE4000; border-radius: 8px;">
+            <p style="font-size: 18px; line-height: 1.8; color: #333; font-family: 'Open Sans', sans-serif;">
+                Bạn yêu thích tiếng Anh nhưng còn ngại ngùng chưa dám cất lời? Bạn muốn "level up" bản thân trong một môi trường không khoảng cách?<br><br>
+                Chào mừng bạn đến với Xuân Phương English Club (XPEC) – nơi chính thức ra đời vào ngày 07/03/2021. Tại XPEC, chúng mình không chỉ học ngoại ngữ, mà còn cùng nhau xây dựng một cộng đồng siêu năng động để phát triển kỹ năng và kết nối những tâm hồn đồng điệu. Với tinh thần "bung lụa" hết mình, chúng mình tin rằng mỗi thành viên đều là một phiên bản tiềm năng đang chờ được khai phá. Đừng để nỗi sợ cản bước, hãy cùng chúng mình tự tin làm chủ ngôn ngữ và kiến tạo tương lai!
+            </p>
+        </div>
+
+        <!-- Hộp 2: Founding Date & Slogan -->
+        <div class="xpec-section" style="margin: 30px 0; padding: 25px; background-color: #fffcd1; border-left: 5px solid #EE4000; border-radius: 8px;">
+            <p style="font-size: 16px; line-height: 1.8; color: #333; font-family: 'Open Sans', sans-serif; font-weight: 600;">
+                <span style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #EE4000; margin-bottom: 15px;">Ngày thành lập:</span> 07/03/2021<br><br>
+                <span style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #EE4000; margin-bottom: 15px;">Slogan:</span> <em>Not only English, we're beyond your XPEC-tations</em><br><br>
+                <span style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #EE4000; margin-bottom: 15px;">Tinh thần chủ đạo:</span> Tự tin – Sáng tạo – Không khoảng cách!
+            </p>
+        </div>
+
+        <!-- Hộp 3: Vision & Mission -->
+        <div class="xpec-section" style="margin: 30px 0; padding: 25px; background-color: #fffcd1; border-left: 5px solid #EE4000; border-radius: 8px;">
+            <p style="font-size: 17px; line-height: 1.8; color: #333; font-family: 'Open Sans', sans-serif; font-style: italic; text-align: center; margin-bottom: 20px; color: #EE4000; font-weight: 700;">
+                "Hơn cả một ngôn ngữ, đó là sự kết nối giữa các tâm hồn"
+            </p>
+            <p style="font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif;">
+                Chúng mình biết, học một ngôn ngữ mới đôi khi không chỉ là học từ vựng hay ngữ pháp, mà là hành trình vượt qua nỗi sợ của chính mình. Có những lúc bạn ấp ủ rất nhiều ý tưởng nhưng lại ngần ngại chẳng dám nói ra, hay đôi khi cảm thấy tiếng Anh thật khô khan qua những trang sách. Đó chính là lý do chúng mình ở đây.
+                <br><br>
+                CLB Tiếng Anh trường THPT Xuân Phương ra đời với mong muốn xây dựng một cộng đồng – nơi mà tiếng Anh trở thành chiếc cầu nối thay vì một rào cản. Chúng mình muốn tạo ra một không gian mà bạn có thể "level up" khả năng từ những câu chào hỏi bập bẹ cho đến những màn tranh biện sắc sảo, nơi mọi lỗi sai đều được trân trọng như một nấc thang để trưởng thành.
+                <br><br>
+                Nhưng hơn cả tiếng Anh, chúng mình khao khát mang đến cho bạn một môi trường thực tế để bạn bước ra khỏi vùng an toàn. Tại đây, bạn không chỉ rèn luyện kỹ năng mềm, từ thuyết trình đến tư duy phản biện, mà còn được kết nối với những người bạn mới, những anh chị đi trước đầy nhiệt huyết. Trong thời đại hội nhập này, chúng mình tin rằng khi cùng nhau học tập và trải nghiệm, mỗi cá nhân sẽ tìm thấy phiên bản tự tin nhất của chính mình để sẵn sàng vươn ra thế giới.
+            </p>
+        </div>
+
+        <!-- Hộp 4: Club Principles -->
+        <div class="xpec-section" style="margin: 30px 0; padding: 25px; background-color: #fffcd1; border-left: 5px solid #EE4000; border-radius: 8px;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #EE4000; margin-bottom: 20px;">Chủ trương hoạt động của chúng mình là</h3>
+            <ul style="margin-left: 20px; font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif;">
+                <li style="margin: 15px 0;">
+                    <span style="font-weight: 700; color: #EE4000;">Khuyến khích mọi thành viên tự tin sử dụng tiếng Anh,</span> biến nỗi "xấu hổ" thành động lực để học hỏi điều hay.
+                </li>
+                <li style="margin: 15px 0;">
+                    <span style="font-weight: 700; color: #EE4000;">Không để ai bị bỏ lại phía sau,</span> mỗi bước tiến của bạn đều có sự đồng hành của cả tập thể.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hộp 5: Member Benefits -->
+        <div class="xpec-section" style="margin: 30px 0; padding: 25px; background-color: #fffcd1; border-left: 5px solid #EE4000; border-radius: 8px;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #EE4000; margin-bottom: 20px;">Đặc quyền chỉ dành riêng cho thành viên đó nha </h3>
+            <div style="display: grid; gap: 20px;">
+                <div style="padding: 15px; background-color: #ffc8c8; border-radius: 6px; border-left: 4px solid #EE4000;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #EE4000; margin-bottom: 8px;">Nâng trình Tiếng Anh</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Cải thiện phản xạ và trình độ ngôn ngữ thông qua môi trường thực hành liên tục.</p>
+                </div>
+                <div style="padding: 15px; background-color: #ffc8c8; border-radius: 6px; border-left: 4px solid #EE4000;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #EE4000; margin-bottom: 8px;">Kỹ năng mềm "Đỉnh của chóp"</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Trải nghiệm thực tế qua các buổi làm việc nhóm, thuyết trình và tư duy phản biện (Critical Thinking).</p>
+                </div>
+                <div style="padding: 15px; background-color: #ffc8c8; border-radius: 6px; border-left: 4px solid #EE4000;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #EE4000; margin-bottom: 8px;">Sáng tạo không giới hạn</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Tham gia các hoạt động ngoại khóa, sự kiện văn hóa và workshop độc đáo.</p>
+                </div>
+                <div style="padding: 15px; background-color: #ffc8c8; border-radius: 6px; border-left: 4px solid #EE4000;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #EE4000; margin-bottom: 8px;">Kết nối Gen-to-Gen</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Mở rộng vòng tròn bạn bè, giao lưu và nhận "bí kíp" từ các anh chị khóa trước siêu dễ thương và tâm lý.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="xpec-member" class="page">
+        <div class="card">
+            <h2>XPEC - Thành viên</h2>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                <img src="image/tiếng anh/nhân sự/Đào Thị Thanh Huyền - chủ nhiệm.jpg" alt="Chủ tịch" class="chairman-image"> 
+                <div>
+                    <p><b>Chủ nhiệm CLB:</b> Đào Thị Thanh Huyền</p>
+                    <p><i>"Not only English, we're beyond your XPEC-tations"</i></p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 30px 0 20px 0;">Core Members</h3>
+            <div class="members-horizontal">
+                <div class="member-item-horizontal" onclick="openMemberModal(event)">
+                    <img src="image/tiếng anh/nhân sự/Đỗ Mai Anh - phó chủ nhiệm.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Đỗ Mai Anh</h4>
+                    <p>Phó chủ nhiệm</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Đỗ Mai Anh</h2>
+                        <p>Phó chủ nhiệm XPEC</p>
+                        <p>Năm học: 2023</p>
+                        <p>Lĩnh vực: Tổ chức sự kiện, phát triển cộng đồng.</p>
+                        <p>"Tôi tin rằng tiếng Anh là chiếc cầu nối những tâm hồn, và XPEC là nơi để chúng ta cùng nhau tỏa sáng."</p>
+                    </div>
+                </div>
+
+                <div class="member-item-horizontal" onclick="openMemberModal(event)">
+                    <img src="image/tiếng anh/nhân sự/Nguyễn Ngọc Diệp - phó chủ nhiệm.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Nguyễn Ngọc Diệp</h4>
+                    <p>Phó Chủ nhiệm</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Nguyễn Ngọc Diệp</h2>
+                        <p>Phó chủ nhiệm XPEC</p>
+                        <p>Năm học: 2024</p>
+                        <p>Lĩnh vực: Tổ chức các buổi luyện tập tiếng Anh sáng tạo.</p>
+                        <p>"Mỗi hoạt động của XPEC đều là một cơ hội để các thành viên tỏa sáng."</p>
+                    </div>
+                </div>
+
+                <div class="member-item-horizontal" onclick="openMemberModal(event)">
+                    <img src="image/tiếng anh/nhân sự/nguyễn-hoàng-gia-hân.jpg" alt="Thành viên" class="member-trigger">
+                    <h4>Nguyễn Hoàng Gia Hân</h4>
+                    <p>Thành viên</p>
+                    <div class="member-hidden-data" style="display:none;">
+                        <h2>Nguyễn Hoàng Gia Hân</h2>
+                        <p>Thành viên XPEC</p>
+                        <p>Năm học: 2025</p>
+                        <p>Lĩnh vực: Hoạt động trong ban chuyên môn.</p>
+                        <p>"Con người ta cần nỗ lực mỗi ngày để thành công hơn."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member Modal -->
+        <div class="member-modal" id="memberModal" onclick="closeMemberModal(event)">
+            <div class="member-modal-content" onclick="event.stopPropagation()">
+                <div class="member-modal-image">
+                    <img src="" alt="Thành viên" id="modalImage">
+                </div>
+                <div class="member-modal-bio" id="modalBio">
+                    <!-- Bio content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="xpec-activity" class="page">
+        <h2 style="text-align: centre; margin-bottom: 1000px;">XPEC - Hoạt động</h2>
+        <div class="wheel-container">
+            <div class="wheel-stage" id="wheelStage"></div>
+            <div class="wheel-info">
+                <h2 id="wheelTitle">Đỗ Mai Anh</h2>
+                <p id="wheelDesc">Phó chủ nhiệm XPEC</p>
+                <div class="wheel-nav">
+                    <button class="wheel-btn" onclick="rotateWheel(-1)">↑</button>
+                    <button class="wheel-btn" onclick="rotateWheel(1)">↓</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="xpec-contact" class="page">
+        <div class="card">
+            <h2>Hỗ trợ & Giải đáp — XPEC</h2>
+            <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">Chúng mình đang mong chờ được chào đón những gương mặt mới đầy tiềm năng như bạn! Đừng ngần ngại, nếu có bất kỳ thắc mắc nào, hãy nhắn tin ngay cho chúng mình để được giải đáp nhé. Let's join us!</p>
+            <p>📧 xpec@xuanphuong.edu.vn</p>
+            <div style="margin-top:30px;">
+                <a href="https://forms.gle/nGtV3afQ464Zq9DBA" target="_blank" rel="noopener" style="margin:6px; padding:10px 14px; background:#0077cc; color:#fff; border-radius:6px; text-decoration:none; display:inline-block;">📝 Gửi câu hỏi (Google Form)</a>
+            </div>
+            <div class="social-icons" style="margin-top:20px;">
+                <a href="https://www.facebook.com/xuanphuongenglishclub" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Science Club -->
+    <div id="science-intro" class="page">
+        <h2 style="font-family: 'Oswald', sans-serif; font-size: 25px; color: #000000; margin-bottom: 30px;">Xuân Phương Science Club - Giới thiệu</h2>
+        <!-- Container 1: Lời nói đầu -->
+        <div class="science-section" style="margin: 30px 0; padding: 25px; background-color: #D7D7D7; border-left: 5px solid #202020; border-radius: 8px;">
+            <b><p style="font-size: 17px; line-height: 1.8; color: #000000; font-family: 'Open Sans', sans-serif;">
+                Ra đời vào ngày 29/12/2023, CLB Robotics THPT Xuân Phương không chỉ là một phòng Lab khô khan, mà là xưởng chế tác của những giấc mơ.
+                <br><br>
+                Chúng mình tin rằng: Lý thuyết chỉ là những con số nằm yên trên giấy, nhưng thực tế là khi bạn nhìn thấy robot mình lắp ráp bắt đầu chuyển động. Tại đây, chúng mình cùng nhau biến những dòng code vô hồn thành những sản phẩm thực tế, từ những mạch điện tử nhỏ bé đến những hệ thống robot thông minh.
+                <br><br>
+                Nếu bạn là một "máy làm chuyên môn" đang tìm kiếm những người đồng đội cùng tần số, hay đơn giản là muốn thấy ý tưởng của mình bước ra đời thực, thì cánh cửa phòng Lab luôn rộng mở chào đón bạn!
+            </p></b>
+        </div>
+
+        <!-- Container 2: Ngày thành lập -->
+        <div class="science-section" style="margin: 30px 0; padding: 25px; background-color: #D7D7D7; border-left: 5px solid #202020; border-radius: 8px;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #038019; margin-bottom: 15px;">📅 Ngày thành lập</h3>
+            <p style="font-size: 18px; line-height: 1.8; color: #000000; font-family: 'Open Sans', sans-serif; font-weight: 700;">
+                29/12/2023
+            </p>
+        </div>
+
+        <!-- Container 3: Mục đích -->
+        <div class="science-section" style="margin: 30px 0; padding: 25px; background-color: #D7D7D7; border-left: 5px solid #202020; border-radius: 8px;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #038019; margin-bottom: 20px;">🎯 Mục đích</h3>
+            <b><p style="font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif; margin-bottom: 15px;">
+                Tại CLB, mỗi thành viên là một mắt xích quan trọng trong một cỗ máy vận hành hoàn hảo. Mục đích của chúng mình rất rõ ràng:
+            </p>
+            <ul style="margin-left: 20px; font-size: 16px; line-height: 2; color: #333; font-family: 'Open Sans', sans-serif;">
+                <li>
+                    <span style="font-weight: 700; color: #038019;">Không chỉ học, chúng mình làm.</span> Robot, mô hình, ứng dụng... tất cả đều được ra đời từ sự nỗ lực của các nhóm dự án.
+                </li>
+                <li>
+                    <span style="font-weight: 700; color: #038019;">Tạo không gian để các "máy làm chuyên môn" giao lưu, học hỏi và truyền lửa cho nhau.</span>
+                </li>
+                <li>
+                    <span style="font-weight: 700; color: #038019;">Tư duy logic, lập trình, lắp ráp in 3D và quan trọng nhất là tinh thần làm việc nhóm (Teamwork)</span> – nơi 1+1 luôn lớn hơn 2.
+                </li>
+            </ul>
+            </b>
+        </div>
+
+        <!-- Container 4: Hoạt động chính -->
+        <div class="science-section" style="margin: 30px 0; padding: 25px; background-color: #D7D7D7; border-left: 5px solid #202020; border-radius: 8px;">
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #038019; margin-bottom: 20px;">⚙️ Hoạt động chính của CLB</h3>
+            <div style="display: grid; gap: 20px;">
+                <div style="padding: 15px; background-color: #ffffff; border-radius: 6px; border-left: 4px solid #202020;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #038019; margin-bottom: 8px;">🔧 Chế tạo & Lập trình</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Lắp ráp Robot và mạch điện tử, viết code, in 3D.</p>
+                </div>
+                <div style="padding: 15px; background-color: #ffffff; border-radius: 6px; border-left: 4px solid #202020;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color:#038019; margin-bottom: 8px;">🏆 Thi đấu</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Lập team "chinh chiến" tại các giải đấu chuyên môn liên trường và quốc gia.</p>
+                </div>
+                <div style="padding: 15px; background-color: #ffffff; border-radius: 6px; border-left: 4px solid #202020;">
+                    <h4 style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #038019; margin-bottom: 8px;">🔬 Nghiên cứu</h4>
+                    <p style="font-size: 15px; line-height: 1.6; color: #333; font-family: 'Open Sans', sans-serif;">Thực hiện các dự án KHKT để tham dự cuộc thi các cấp.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="science-member" class="page">
+        <div class="card">
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 25px; color: #000000; margin-bottom: 30px;">Xuân Phương Science Club - Thành viên</h2>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                <img src="image/khoa học/nhân sự/le-khanh-tung.jpg" alt="Chủ tịch" class="chairman-image"> 
+                <div>
+                    <p><b>Chủ nhiệm CLB:</b> Lê Khánh Tùng</p>
+                    <p><i>"Kiến Thức + Kinh Nghiệm + Trải Nghiệm = Lê Khánh Tùng"</i></p>
+                </div>
+            </div>
+
+            <h3 style="font-family: 'Oswald', sans-serif; font-size: 20px; color: #000000; margin-bottom: 30px;">Core Members (4 người)</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 25px;">Những kỹ sư trẻ dẫn dắt các mảng hoạt động chính</p>
+
+            <div class="member-item-side">
+                <img src="image/tiếng anh/nhân sự/Đào Thị Thanh Huyền - chủ nhiệm.jpg" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Đào Thị Thanh Huyền</h4>
+                    <p><strong>Vị trí:</strong> Trưởng ban chuyên môn</p>
+                    <p><strong>Tính cách:</strong> Nhạy bén, linh hoạt</p>
+                    <p>Nghiên cứu về khoa học giúp tôi chạm tay tới được ma thuật của kiến thức.</p>
+                </div>
+            </div>
+
+            <div class="member-item-side">
+                <img src="image/khoa học/nhân sự/ly-duc-hung.jpg" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Thầy Lý Đức Hưng</h4>
+                    <p><strong>Vị trí:</strong> Quản lí</p>
+                    <p><strong>Tính cách:</strong>  Thân thiện, cẩn thận</p>
+                    <p>Điểm cuốn hút nhất khi dấn thân vào khoa học không đơn thuần là việc ta tạo ra những hệ thống máy móc phức tạp hay những vi mạch điện tử tinh vi mà hơn cả thế, đó là hành trình chúng ta được cùng nhau thỏa sức tò mò, khám phá những bí ẩn và biến những ý tưởng táo bạo thành hiện thực..</p>
+                </div>
+            </div>
+
+            <div class="member-item-side">
+                <img src="image/khoa học/nhân sự/vu-minh-chau.jpg" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Cô Vũ Minh Châu</h4>
+                    <p><strong>Vị trí:</strong> Quản lí</p>
+                    <p><strong>Tính cách:</strong> Trầm ổn, tận tâm</p>
+                    <p>Điều tuyệt vời nhất khi chúng ta nghiên cứu về khoa học không chỉ là những hệ thống phức tạp, những vi chíp điện tử tinh vi chúng ta tạo ra mà còn là quá trình khám phá và sáng tạo cùng nhau.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div id="science-activity" class="page">
+    <h2 style="font-family: 'Oswald', sans-serif; font-size: 25px; color: #000000; margin-bottom: 30px;">Xuân Phương Science Club - Hoạt động</h2>
+    
+    <div class="card" style="margin-bottom: 40px;">
+        <h3 style="color: #038019; margin-bottom: 15px;">⚙️ Lịch trình hoạt động</h3>
+        <p><strong>Thứ 2, 4, 6:</strong> Workshop chế tạo & lập trình (16h00 - 18h00)</p>
+        <p><strong>Thứ 7:</strong> Buổi thi đấu nội bộ & kiểm tra dự án (14h00 - 17h00)</p>
+        <p><strong>Chủ nhật:</strong> Nghiên cứu dự án KHKT (09h00 - 12h00)</p>
+    </div>
+    <!-- HOẠT ĐỘNG NỔI BẬT - Grid Layout -->
+    <div style="margin: 40px 0;">
+        <h3 style="text-align: center; color: #038019; margin-bottom: 20px;">🚀 HOẠT ĐỘNG NỔI BẬT</h3>
+        <div class="video-grid">
+            <!-- Hàng: Vid2, Vid3, Vid4 xếp ngang 3 cái -->
+            <div class="video-item" onclick="toggleVideo(this)">
+                <video src="image/khoa học/sự kiện/vid2.mp4" controls></video>
+                <div class="video-info">
+                    <h4>Dự thi tranh đấu</h4>
+                    <p>Nắm bắt cơ hội giao lưu</p>
+                </div>
+            </div>
+            <div class="video-item" onclick="toggleVideo(this)">
+                <video src="image/khoa học/sự kiện/vid3.mp4" controls></video>
+                <div class="video-info">
+                    <h4>Tiểu Phẩm</h4>
+                    <p>Tham gia các giải đấu liên trường và quốc gia</p>
+                </div>
+            </div>
+            <div class="video-item" onclick="toggleVideo(this)">
+                <video src="image/khoa học/sự kiện/vid4.mp4" controls></video>
+                <div class="video-info">
+                    <h4>Thiết kế robot</h4>
+                    <p>Tạo ra các mô hình và robot bằng kỹ thuật cơ khí</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm phần thành tích -->
+    <div class="card" style="margin-top: 40px;">
+        <h3 style="color: #038019; margin-bottom: 15px;">🏆 Thành tích nổi bật</h3>
+        <ul style="text-align: left; padding-left: 20px; line-height: 2;">
+            <li>🥉 Giải Ba trong Cuộc thi Khoa học kỹ thuật cấp Cụm dành cho học sinh THPT năm học 2025–2026!</li>
+            <li>🔬 Gặt hái giải thưởng tại các kỳ thi KHKT và các giải Robotics.</li>
+            <li>👨‍💻 Hơn 10 thành viên tích cực tham gia</li>
+            <li>🎓 Nhiều mô hình/dự án ứng dụng thực tế được đánh giá cao về tính sáng tạo.</li>
+        </ul>
+    </div>
+</div>
+    <div id="science-contact" class="page">
+        <div class="card">
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 25px; color: #000000; margin-bottom: 30px;">Hỗ trợ & Giải đáp — Xuân Phương Science Club</h2>
+            
+            <!-- Call to Action -->
+            <div style="margin: 25px 0; padding: 25px; background-color: #D7D7D7; border-left: 5px solid #000000; border-radius: 8px;">
+                <h3 style="font-family: 'Oswald', sans-serif; font-size: 24px; color: #038019; text-align: center; margin-bottom: 20px;">🚀 Join the Future - Join Us!</h3>
+                <p style="font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif; margin-bottom: 20px;">
+                    Bạn có niềm đam mê với những bo mạch điện tử? Bạn thích cảm giác "hack não" cùng những dòng code hay muốn tận tay điều khiển những chú robot in 3D do chính mình làm ra?
+                    <br><br>
+                    <span style="font-weight: 700; color: #000000;">CLB Science and Engineering đang tìm kiếm đồng đội cho các dự án sắp tới:</span>
+                </p>
+                <ul style="margin-left: 20px; font-size: 15px; line-height: 2; color: #333; font-family: 'Open Sans', sans-serif; margin-bottom: 20px;">
+                    <li>
+                        <span style="font-weight: 700; color: #000000;">🛠 Mảng Chế tạo & Lập trình:</span> Dành cho các phù thủy mạch điện, thợ in 3D và những tay viết code tài ba.
+                    </li>
+                    <li>
+                        <span style="font-weight: 700; color: #038019;">🔥 Mảng Thi đấu:</span> Tìm kiếm những cái đầu lạnh để lập team "chinh chiến" tại các giải đấu Robotics liên trường và quốc gia.
+                    </li>
+                    <li>
+                        <span style="font-weight: 700; color: #038019;">🎓 Mảng Nghiên cứu:</span> Dành cho những ai muốn chinh phục các giải thưởng KHKT danh giá.
+                    </li>
+                </ul>
+                <p style="font-size: 16px; line-height: 1.9; color: #333; font-family: 'Open Sans', sans-serif; margin-bottom: 20px;">
+                    Dù bạn là "pro" hay chỉ mới bắt đầu tìm hiểu về STEM, chỉ cần bạn có tư duy logic và sự kiên trì, chúng mình sẽ cùng nhau chinh phục mọi giới hạn.
+                    <br><br>
+                    <span style="font-weight: 700; color: #038019; font-size: 17px;">👉 Liên hệ ngay để nhận "Vé vào Lab" nhé!</span>
+                </p>
+            </div>
+
+            <p style="margin-top: 20px;">📧 science@xuanphuong.edu.vn</p>
+            <p>📱 0869 620 521</p>
+            <div style="margin-top:30px;">
+                <a href="https://forms.gle/nGtV3afQ464Zq9DBA" target="_blank" rel="noopener" style="margin:6px; padding:10px 14px; background:#0077cc; color:#fff; border-radius:6px; text-decoration:none; display:inline-block;">📝 Gửi câu hỏi (Google Form)</a>
+            </div>
+            <div class="social-icons" style="margin-top:20px;">
+                <a href="https://www.facebook.com/profile.php?id=61555608532576" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLB Bóng rổ -->
+    <div id="bong-ro-intro" class="page">
+        <h2 style>Xuân Phương Basketball Team - Giới thiệu</h2>
+
+        <div class="bong-ro-section">
+            <h3>LỜI NÓI ĐẦU</h3>
+            <p>
+                Được thắp lửa từ ngày 16 tháng 9 năm 2020 ngay tại sân chơi của trường THPT Xuân Phương, CLB Bóng rổ trường THPT Xuân Phương XPBT ra đời với sứ mệnh không chỉ là một đội thể thao, mà là "mái nhà" chung cho những trái tim đam mê trái bóng cam.
+            </p>
+            <p style="margin-top: 15px;">
+                Chúng tớ tin rằng, bóng rổ không chỉ là những cú ném rổ ghi điểm, mà còn là hành trình rèn luyện bản lĩnh và sự gắn kết. Với mục tiêu xây dựng một sân chơi lành mạnh và thúc đẩy văn hóa thể thao học đường, CLB luôn nỗ lực lan tỏa tinh thần rèn luyện thể chất tích cực đến toàn thể học sinh Xuân Phương. Tại đây, chúng tôi đề cao giá trị của sự học hỏi và tinh thần đồng đội hơn bất kỳ bảng điểm nào.
+            </p>
+        </div>
+
+        <div class="bong-ro-section">
+            <h3>🏀 THÔNG TIN CƠ BẢN</h3>
+            <p><strong>📆Ngày thành lập:</strong> 16/9/2020</p><br>
+            <p><strong>📍Địa điểm hoạt động:</strong> Sân bóng rổ trường THPT Xuân Phương</p>
+            
+            <h4 style="margin-top: 20px; color: #ff4500; font-family: 'Oswald', sans-serif;">Cơ cấu nhân sự:</h4>
+            <div class="bong-ro-highlight">
+                <strong>Ban Điều hành (12 nhân sự):</strong> Chịu trách nhiệm quản lý, vận hành và tổ chức sự kiện.
+            </div>
+            <div class="bong-ro-highlight">
+                <strong>Ban Chuyên môn (30 nhân sự):</strong> Tập trung vào huấn luyện, kỹ thuật và thi đấu (được chia thành các đội hình/tổ tập luyện chuyên sâu).
+            </div>
+        </div>
+
+        <div class="bong-ro-section">
+            <h3>🎯MỤC ĐÍCH THÀNH LẬP</h3>
+            <p style="text-align: center; font-weight: bold; font-size: 1.1rem; color: #ff4500; margin-bottom: 20px;">
+                "Nơi những trái tim chung nhịp đập bóng"
+            </p>
+            <div class="bong-ro-blockquote">
+                Có bao giờ sau một tiết học căng thẳng, bạn đứng bên cửa sổ nhìn xuống sân trường và khao khát tiếng giày rít trên mặt sân, hay tiếng bóng đập đều đặn vang lên không? CLB Bóng rổ chúng mình ra đời đơn giản là từ những niềm khao khát cháy bỏng như thế.
+                <br><br>
+                Chúng mình muốn xây dựng một không gian mà tại đó, bóng rổ không chỉ là một môn thể thao, mà là 'liều thuốc' tinh thần. Đó là nơi bạn được trút bỏ mọi áp lực bài vở, được đổ mồ hôi cùng đồng đội và tìm thấy niềm vui thuần khiết nhất sau những giờ học dài.
+                <br><br>
+                Xa hơn cả một sân chơi, chúng mình mong muốn thắp lên ngọn lửa về một lối sống năng động và một tinh thần thể thao cao thượng ngay dưới mái trường Xuân Phương. Chúng mình tin rằng, mỗi cú ném rổ sẽ giúp bạn bản lĩnh hơn, mỗi lần vấp ngã trên sân sẽ dạy bạn cách đứng dậy, và mỗi trận đấu sẽ là một bài học về sự gắn kết. Tại đây, chúng mình cùng nhau lan tỏa một văn hóa: Sống khỏe, sống nhiệt huyết và sống hết mình với đam mê.
+            </div>
+        </div>
+
+        <div class="bong-ro-section">
+            <h3>🏆CHỦ TRƯƠNG & TÔN CHỈ HOẠT ĐỘNG</h3>
+            <div class="bong-ro-highlight" style="margin-bottom: 20px;">
+                <strong>Chủ trương:</strong> "Tinh thần thể thao và sự học hỏi là giá trị cốt lõi" – Chúng tôi trân trọng quá trình nỗ lực và thái độ cầu tiến hơn là kết quả thắng thua.
+            </div>
+            
+            <h4 style="margin: 20px 0 15px 0; color: #ff4500; font-family: 'Oswald', sans-serif;">Hệ thống Tôn chỉ:</h4>
+            <div class="bong-ro-highlight">
+                <strong>Văn minh & Cầu tiến:</strong> Đảm bảo mọi hoạt động giao lưu luôn diễn ra trong sự tôn trọng, lịch sự và cùng nhau tiến bộ.
+            </div>
+            <div class="bong-ro-highlight">
+                <strong>Đồng hành cùng Newbies:</strong> Luôn ưu tiên hỗ trợ và hướng dẫn tận tình cho các thành viên mới bắt đầu, giúp các bạn làm quen với nhịp độ của đội.
+            </div>
+            <div class="bong-ro-highlight">
+                <strong>Thái độ linh hoạt:</strong> Nghiêm túc, kỷ luật khi vào sân đấu nhưng luôn giữ không khí thoải mái, vui vẻ trong các buổi luyện tập.
+            </div>
+        </div>
+
+        <div class="bong-ro-section">
+            <h3>🚀 ĐỊNH HƯỚNG PHÁT TRIỂN</h3>
+            <p>
+                Trong tương lai, CLB đặt mục tiêu mở rộng tầm ảnh hưởng, không chỉ dừng lại trong khuôn viên trường mà còn kết nối với các cộng đồng bóng rổ học đường khác, trở thành điểm đến hấp dẫn nhất cho mọi học sinh mong muốn phát triển bản thân qua bộ môn bóng rổ.
+            </p>
+        </div>
+    </div>
+    <div id="bong-ro-member" class="page">
+        <div class="card">
+            <h2>Xuân Phương Basketball Team - Thành viên</h2>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                <img src="https://i.pinimg.com/736x/67/0b/45/670b45b166dfa5ba7e251774950525c9.jpg" width="300px"  alt="Chủ tịch" style="border-radius: 50%;"> 
+                <div>
+                    <p><b>Captain & Chủ tịch:</b> Johnto Khôi Nguyễn</p>
+                    <p><i>"Sân ướt, thì lau được mà !!!!"</i></p>
+                </div>
+            </div>
+
+            <div class="members-section">
+                <h3>Ban điều hành (12 người)</h3>
+                <p>Hậu phương tài năng, nhanh nhẹn, đầy nhiệt huyết...</p>
+                <div class="members-grid">
+                    <div class="member-card glitch">
+                        <img src="image/bóng rổ/nhân sự/linh_vice_presi.jpg" alt="Thành viên">
+                        <h4>Nguyễn Ngọc Linh</h4>
+                        <p>Vị trí: Phó chủ tịch </p>
+                    </div>
+                    <div class="member-card glitch">
+                        <img src="image/bóng rổ/nhân sự/nguyen_mai_linh_pr.jpg" alt="Thành viên">
+                        <h4>Nguyễn Mai Linh</h4>
+                        <p>Vị trí: Head of PR </p>
+                    </div>
+                                        <div class="member-card glitch">
+                        <img src="image/bóng rổ/nhân sự/nguyen_hien_trang_hr.jpg" alt="Thành viên">
+                        <h4>Nguyễn Hiền Trang</h4>
+                        <p>Vị trí: Head of HR </p>
+                    </div>
+                                        <div class="member-card glitch">
+                        <img src="image/bóng rổ/nhân sự/dinh_vu_viet_anh_logistics.jpg" alt="Thành viên">
+                        <h4>Đinh Vũ Việt Anh</h4>
+                        <p>Vị trí: Head of Logistics </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-section">
+                <h3>Ban chuyên môn (30 người)</h3>
+                <p>Những cầu thủ tài năng, đam mê bóng rổ.... </p>
+                <div class="members-grid">
+                    <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/Nguyen_member.jpg" alt="Thành viên">
+                        <h4>Phạm Bình Nguyên </h4>
+                        <p> Vị trí: Raumanian | Số áo: 15</p>
+                    </div>
+                    <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/dao_vu_hai_mem.jpg" alt="Thành viên">
+                        <h4>Đào Vũ Hải </h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 17</p>
+                    </div>
+                    <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/le_anh_vu_mem.jpg" alt="Thành viên">
+                        <h4>Lê Anh Vũ</h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 11</p>
+                    </div>
+                    <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/luong_duc_hien.jpg" alt="Thành viên">
+                        <h4>Lương Đức Hiển</h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 30</p>
+                    </div>
+                    <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/nguyen_trong_nghia.jpg" alt="Thành viên">
+                        <h4>Nguyễn Trọng Nghĩa</h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 98</p>
+                    </div>
+                    <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/pham_phu_hai_mem.jpg" alt="Thành viên">
+                        <h4>Phạm Phú Hải</h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 8</p>
+                    </div>
+                                        <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/vu_duc_duy_mem.jpg" alt="Thành viên">
+                        <h4>Vũ Duy Đức</h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 19</p>
+                    </div>
+                                        <div class="member-card ripple">
+                        <img src="image/bóng rổ/nhân sự/pham_gia_minh_mem.jpg" alt="Thành viên">
+                        <h4>Phạm Gia Minh</h4>
+                        <p>Vị trí: Chuyên môn | Số áo: 44</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bong-ro-activity" class="page">
+        <h2>Xuân Phương Basketball Team  - Hoạt động</h2>
+<div class="insta-gallery">
+    <div class="insta-card" onclick="openInstaModal(0)">
+        <img src="image/bóng rổ/sự kiện/basketball (12).jpg" alt="Hoạt động 1">
+        <div class="card-overlay">
+            <div class="card-label">Giải đấu 2024</div>
+        </div>
+    </div> 
+    
+    <div class="insta-card" onclick="openInstaModal(1)">
+        <img src="image/bóng rổ/sự kiện/basketball (5).jpg" alt="Hoạt động 2">
+        <div class="card-overlay">
+            <div class="card-label">Tác chiến</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(2)">
+        <img src="image/bóng rổ/sự kiện/basketball (6).jpg" alt="Hoạt động 3">
+        <div class="card-overlay">
+            <div class="card-label">Giao đấu</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(3)">
+        <img src="image/bóng rổ/sự kiện/basketball (7).jpg" alt="Hoạt động 4">
+        <div class="card-overlay">
+            <div class="card-label">Buổi tập</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(4)">
+        <img src="image/bóng rổ/sự kiện/basketball (8).jpg" alt="Hoạt động 5">
+        <div class="card-overlay">
+            <div class="card-label">Luyện kỹ năng</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(5)">
+        <img src="image/bóng rổ/sự kiện/basketball (9).jpg" alt="Hoạt động 6">
+        <div class="card-overlay">
+            <div class="card-label">Đội hình</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(6)">
+        <img src="image/bóng rổ/sự kiện/basketball (10).jpg" alt="Hoạt động 7">
+        <div class="card-overlay">
+            <div class="card-label">Trận đấu</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(7)">
+        <img src="image/bóng rổ/sự kiện/basketball (11).jpg" alt="Hoạt động 8">
+        <div class="card-overlay">
+            <div class="card-label">Thi đấu vòng loại</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(8)">
+        <img src="image/bóng rổ/sự kiện/basketball (1).jpg" alt="Hoạt động 9">
+        <div class="card-overlay">
+            <div class="card-label">Giao lưu</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(9)">
+        <img src="image/bóng rổ/sự kiện/basketball (2).jpg" alt="Hoạt động 10">
+        <div class="card-overlay">
+            <div class="card-label">Chung kết</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(10)">
+        <img src="image/bóng rổ/sự kiện/basketball (3).jpg" alt="Hoạt động 11">
+        <div class="card-overlay">
+            <div class="card-label">Tập đạo tạo</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(11)">
+        <img src="image/bóng rổ/sự kiện/basketball (4).jpg" alt="Hoạt động 12">
+        <div class="card-overlay">
+            <div class="card-label">Bán kết</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(12)">
+        <img src="image/bóng rổ/sự kiện/basketball (12).jpg" alt="Hoạt động 13">
+        <div class="card-overlay">
+            <div class="card-label">Huấn luyện</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(13)">
+        <img src="image/bóng rổ/sự kiện/basketball (5).jpg" alt="Hoạt động 14">
+        <div class="card-overlay">
+            <div class="card-label">Kỹ thuật chuẩn</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(14)">
+        <img src="image/bóng rổ/sự kiện/basketball (6).jpg" alt="Hoạt động 15">
+        <div class="card-overlay">
+            <div class="card-label">Thể lực</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(15)">
+        <img src="image/bóng rổ/sự kiện/basketball (7).jpg" alt="Hoạt động 16">
+        <div class="card-overlay">
+            <div class="card-label">Lên kế hoạch</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(16)">
+        <img src="image/bóng rổ/sự kiện/basketball (8).jpg" alt="Hoạt động 17">
+        <div class="card-overlay">
+            <div class="card-label">Tự tin bước ra</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(17)">
+        <img src="image/bóng rổ/sự kiện/basketball (9).jpg" alt="Hoạt động 18">
+        <div class="card-overlay">
+            <div class="card-label">Năng lực cao</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(18)">
+        <img src="image/bóng rổ/sự kiện/basketball (10).jpg" alt="Hoạt động 19">
+        <div class="card-overlay">
+            <div class="card-label">Cố gắng hết</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(19)">
+        <img src="image/bóng rổ/sự kiện/basketball (11).jpg" alt="Hoạt động 20">
+        <div class="card-overlay">
+            <div class="card-label">Vô địch</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(20)">
+        <img src="image/bóng rổ/sự kiện/basketball (1).jpg" alt="Hoạt động 21">
+        <div class="card-overlay">
+            <div class="card-label">Hoan hô</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(21)">
+        <img src="image/bóng rổ/sự kiện/basketball (2).jpg" alt="Hoạt động 22">
+        <div class="card-overlay">
+            <div class="card-label">Luyện tập</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(22)">
+        <img src="image/bóng rổ/sự kiện/basketball (3).jpg" alt="Hoạt động 23">
+        <div class="card-overlay">
+            <div class="card-label">Đồng đội</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(23)">
+        <img src="image/bóng rổ/sự kiện/basketball (4).jpg" alt="Hoạt động 24">
+        <div class="card-overlay">
+            <div class="card-label">Chung tay</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(24)">
+        <img src="image/bóng rổ/sự kiện/basketball (12).jpg" alt="Hoạt động 25">
+        <div class="card-overlay">
+            <div class="card-label">Chiến thắng</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(25)">
+        <img src="image/bóng rổ/sự kiện/basketball (5).jpg" alt="Hoạt động 26">
+        <div class="card-overlay">
+            <div class="card-label">Phát triển</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(26)">
+        <img src="image/bóng rổ/sự kiện/basketball (6).jpg" alt="Hoạt động 27">
+        <div class="card-overlay">
+            <div class="card-label">Niệm vui</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(27)">
+        <img src="image/bóng rổ/sự kiện/basketball (7).jpg" alt="Hoạt động 28">
+        <div class="card-overlay">
+            <div class="card-label">Năng động</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(28)">
+        <img src="image/bóng rổ/sự kiện/basketball (8).jpg" alt="Hoạt động 29">
+        <div class="card-overlay">
+            <div class="card-label">Tinh thần</div>
+        </div>
+    </div>
+    
+    <div class="insta-card" onclick="openInstaModal(29)">
+        <img src="image/bóng rổ/sự kiện/basketball (9).jpg" alt="Hoạt động 30">
+        <div class="card-overlay">
+            <div class="card-label">Mục tiêu</div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL INSTAGRAM -->
+<div class="insta-modal" id="instaModal" onclick="closeInstaModal(event)">
+    <button class="modal-close" onclick="closeInstaModal(event)">×</button>
+    <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+        <div class="modal-image-section">
+            <img id="modalImage" src="" alt="Post image">
+        </div>
+        <div class="modal-post-section">
+            <div class="modal-header">
+                <div class="modal-avatar">
+                    <img src="image/hub/logo/xuanphuong.jpg" alt="Avatar">
+                </div>
+                <span class="modal-username">BXPC - Badminton Club</span>
+            </div>
+            <div class="modal-caption">
+                <p>
+                    <span class="caption-username">bxpc_club</span>
+                    <span id="modalCaption">Nội dung bài viết sẽ hiển thị ở đây...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div id="bong-ro-contact" class="page">
+        <div class="card">
+            <h2>Xuân Phương Basketball Team  - Liên hệ</h2>
+            <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">Bạn yêu thích những cú "crossover" lắt léo hay những cú "3-point" chuẩn xác? Bạn đang tìm kiếm một đội bóng để cùng tập luyện và nâng tầm kỹ năng? Đội bóng rổ của chúng mình chính thức mở cửa chào đón các thành viên mới!<br><br>Dù bạn là "lão tướng" dày dạn kinh nghiệm hay người mới bắt đầu tập ném rổ, chỉ cần bạn có:<br>• Niềm đam mê mãnh liệt với trái bóng cam<br>• Tinh thần đồng đội và thái độ tích cực<br>• Mong muốn rèn luyện sức khỏe và mở rộng mối quan hệ<br><br>Đừng ngần ngại mà hãy liên hệ ngay với chúng mình nhé!!!</p>
+            <p>📧 xuanphuongbasketballteam@gmail.com</p>
+            <div style="margin-top:30px;">
+                <a href="https://forms.gle/nGtV3afQ464Zq9DBA" target="_blank" rel="noopener" style="margin:6px; padding:10px 14px; background:#0077cc; color:#fff; border-radius:6px; text-decoration:none; display:inline-block;">📝 Gửi câu hỏi (Google Form)</a>
+            </div>
+            <div class="social-icons" style="margin-top:20px;">
+                <a href="https://www.facebook.com/share/1GsvTJSaKx/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/xpbt_xuanphuongbasketball/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@xp.basketball" target="_blank" rel="noopener" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CLB Cầu lông -->
+    <div id="cau-long-intro" class="page">
+        <h2 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 30px; font-size: 25px;">BXPC - Badminton Xuân Phương Club</h2>
+
+        <div class="cau-long-section">
+            <h3 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 15px; font-size: 22px;">Thông tin cơ bản</h3>
+            <h2 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 15px; font-size: 18px;">-BXPC domybest-</h2>
+            <h2 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 15px; font-size: 18px;">Ngày thành lập:</strong> 10/7/2021</h2>
+        </div>
+
+        <div class="cau-long-section">
+            <h3 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 15px; font-size: 21px;">Nơi tình thân bắt đầu từ những đường cầu</h3>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; text-align: center; margin-bottom: 20px; font-style: italic; font-size: 1.05rem;">
+                "Anh em đến với nhau là bởi chữ Duyên, gắn bó cùng nhau là để cùng nhau phát triển."
+            </p>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8; margin-bottom: 15px;">
+                Chào mừng bạn đến với Badminton Xuân Phương Club (BXPC)! Được thành lập vào ngày 10/07/2021, BXPC không chỉ đơn thuần là một câu lạc bộ thể thao, mà là mái nhà chung của những tâm hồn trót yêu tiếng "nổ" vang dội của quả cầu lông và những bước chạy miệt mài trên thảm đấu.
+            </p>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8; margin-bottom: 15px;">
+                Tại đây, chúng tôi không đặt nặng thắng thua, bởi chủ trương của BXPC rất rõ ràng: "Vui là chính, học hỏi là phụ". Chúng tôi trân trọng sự khác biệt trong lối đánh, tôn trọng kỹ thuật của từng thành viên và luôn đón chào mọi người bằng tinh thần hòa đồng nhất.
+            </p>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8;">
+                Hãy để những căng thẳng thường nhật dừng lại sau cánh cửa sân đấu. Bước vào BXPC, bạn chỉ cần mang theo sự nhiệt huyết, chúng ta sẽ cùng nhau tạo nên một cộng đồng khỏe mạnh và gắn kết.<br><br>
+                <strong style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 15px; font-size: 25px; text-shadow: 0 0 8px rgba(33,150,243,0.95), 0 0 28px rgba(33,150,243,0.6);">BXPC – Do my best!</strong>
+            </p>
+        </div>
+
+        <div class="cau-long-section">
+            <br>
+            <h3 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 15px; font-size: 1.4rem;">💭 Lời tâm sự: Khát vọng và sứ mệnh</h3>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8; margin-bottom: 15px;">
+                Có người hỏi chúng tôi rằng: "Tại sao lại là BXPC?".
+            </p>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8; margin-bottom: 15px;">
+                Câu trả lời nằm ở chính những giọt mồ hôi và nụ cười sau mỗi trận cầu. BXPC ra đời với hai mục đích cốt lõi mà đội ngũ sáng lập luôn theo đuổi:
+            </p>
+            <div style="background: #E3F2FD; padding: 20px; margin: 15px 0; border-left: 4px solid #2196F3; border-radius: 8px;">
+                <p style="font-family: 'Open Sans', sans-serif; color: #333; margin: 10px 0;"><strong style="color: #2196F3;">Thứ nhất:</strong> Tạo ra một "điểm hẹn" đúng nghĩa cho các anh em cùng sở thích. Không phân biệt trình độ, BXPC là nơi để chúng ta giao lưu, trao đổi kinh nghiệm và thắt chặt tình bằng hữu.</p>
+                <p style="font-family: 'Open Sans', sans-serif; color: #333; margin: 10px 0;"><strong style="color: #2196F3;">Thứ hai:</strong> Cháy hết mình với tinh thần thể thao. Chúng tôi muốn xây dựng một môi trường để mỗi thành viên có thể thỏa mãn niềm đam mê cháy bỏng, nơi năng lượng tích cực được lan tỏa mạnh mẽ nhất.</p>
+            </div>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8; margin-bottom: 15px;">
+                Trong quá trình phát triển, BXPC luôn lấy sức khỏe của thành viên làm trọng tâm. Một cơ thể dẻo dai, một tinh thần sảng khoái chính là thành công lớn nhất mà CLB hướng tới. Chúng tôi tin rằng, khi bạn được thoải mái thể hiện lối đánh riêng của mình trong một tập thể thân thiện và tôn trọng, đó là lúc niềm đam mê được thăng hoa nhất.
+            </p>
+            <p style="font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.8;">
+                Hành trình của BXPC vẫn đang tiếp diễn, và chúng tôi rất hạnh phúc khi có bạn đồng hành. Cùng nhau, chúng ta sẽ làm tốt nhất có thể – đúng như tinh thần "BXPC domybest".
+            </p>
+        </div>
+
+        <div class="cau-long-section">
+            <hr>
+            <h3 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 20px; font-size: 1.4rem;">⭐ Chủ trương CLB</h3>
+            <div style="background: #BBDEFB; padding: 18px 22px; margin: 15px 0; border-left: 4px solid #2196F3; border-radius: 8px; font-family: 'Open Sans', sans-serif; color: #333;">
+                <strong style="color: #2196F3; font-family: 'Oswald', sans-serif;">Chủ trương 1:</strong> Vui là chính, học hỏi là phụ
+            </div>
+            <div style="background: #BBDEFB; padding: 18px 22px; margin: 15px 0; border-left: 4px solid #2196F3; border-radius: 8px; font-family: 'Open Sans', sans-serif; color: #333;">
+                <strong style="color: #2196F3; font-family: 'Oswald', sans-serif;">Chủ trương 2:</strong> Lấy phát triển sức khoẻ làm trọng tâm
+            </div>
+            <div style="background: #BBDEFB; padding: 18px 22px; margin: 15px 0; border-left: 4px solid #2196F3; border-radius: 8px; font-family: 'Open Sans', sans-serif; color: #333;">
+                <strong style="color: #2196F3; font-family: 'Oswald', sans-serif;">Chủ trương 3:</strong> Thân thiện, hoà đồng, tôn trọng năng lực, kĩ thuật, lối đánh của từng thành viên
+            </div>
+        </div>
+    </div>
+    <div id="cau-long-member" class="page">
+        <div class="card">
+            <h2>BXPC - Badminton Xuân Phương Club - Thành viên</h2>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                <img src="image/cầu lông/nhân sự/nguyen-huy-hoang-chu-tich.jpg" alt="Chủ tịch" class="chairman-image"> 
+                <div>
+                    <p><b>Chủ tịch CLB:</b> Nguyễn Huy Hoàng</p>
+                    <p><i>"BXPC domybest - Nơi tình thân bắt đầu từ những đường cầu"</i></p>
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 20px 0;">Core Members (4 người)</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 25px;">Những trưởng ban kì cựu và tận tâm</p>
+
+               <div class="member-item-side">
+                <img src="image/cầu lông/nhân sự/badminton (2).jpg" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Nguyễn Bảo Long</h4>
+                    <p><strong>Vị trí:</strong> Trưởng ban chuyên môn | <strong>Kinh nghiệm:</strong> 3 năm</p>
+                    <p><strong>Đặc điểm:</strong> Vua chiến thuật, kẻ tung hứng.</p>
+                    <p>"Cầu lông không chỉ là trò chơi, mà là cách tôi kết nối với mọi người xung quanh. BXPC là nhà thứ hai của tôi."</p>
+                </div>
+            </div>
+
+            <div class="member-item-side">
+                <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-1/583026542_1145084301043905_1786128929764134794_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpWgGDn7up3V9VOLFgz8_4dEREbl3Mqvx0RERuXcyq_FTHn4IrDwYrvTEDZ-7kNsgEZoObSDyOGYDPxczZMwlH&_nc_ohc=KnzkYkNwV-IQ7kNvwGktk6a&_nc_oc=Adk0qD4PePgXk9v0y9sK9SVi6QSKjkiRIk2Ggq_-0ILI67KaOpaZuLsiFg8l9PEWn18&_nc_zt=24&_nc_ht=scontent.fhan17-1.fna&_nc_gid=N-hwUp3fLXk5Sq0aTyFrIQ&oh=00_AfpfTvJBqyazRun2EAuHEdgjzigxOO3f21G94t4vGa12Dw&oe=695E4E3C" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Nguyễn Nam Khánh</h4>
+                    <p><strong>Vị trí:</strong> Huấn luyện viên | <strong>Kinh nghiệm:</strong> 4 năm</p>
+                    <p><strong>Đặc điểm:</strong> Khả năng chỉ huy xuất sắc, kinh nghiệm dồi dào. Tư duy chiến thuật độc đáo, phá cách.</p>
+                    <p>"Mỗi ngày tập luyện là cơ hội để phát triển."</p>
+                </div>
+            </div>
+
+            <div class="member-item-side">
+                <img src="image/cầu lông/nhân sự/avatar-macdinh-2.jpg" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Đặng Minh Hiền</h4>
+                    <p><strong>Vị trí:</strong> Phó chủ tịch | <strong>Kinh nghiệm:</strong> 2 năm</p>
+                    <p><strong>Đặc điểm:</strong> Tư duy quản lý xuất sắc.</p>
+                    <p>"Cầu lông dạy tôi về sự kiên nhẫn và quản lý mục tiêu. Tôi muốn chia sẻ kinh nghiệm của bản thân với các thành viên trẻ."</p>
+                </div>
+            </div>
+
+            <div class="member-item-side">
+                <img src="image/cầu lông/nhân sự/avatar-macdinh3.jpg" alt="Thành viên">
+                <div class="member-item-side-bio">
+                    <h4>Nguyễn Như Tường An</h4>
+                    <p><strong>Vị trí:</strong> Trưởng ban truyền thông | <strong>Kinh nghiệm:</strong> 2 năm</p>
+                    <p><strong>Đặc điểm:</strong> Nhanh nhẹn, tin cậy, chính xác.</p>
+                    <p>"Vai trò trưởng ban chuyên môn giúp tôi hiểu rõ hơn về cơ chế hoạt động của CLB. Tôi tự hào là cầu nối giữa các thành viên."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ <div id="cau-long-activity" class="page">
+    <div class="card">
+        <h2 style="color: #2196F3; font-family: 'Oswald', sans-serif; margin-bottom: 30px;">🏸 BXPC - Hoạt động & Khoảnh Khắc</h2>
+        
+        <div style="margin-bottom: 40px;">
+            <h3 style="color: #2196F3; margin-bottom: 15px;">📅 Lịch trình hoạt động</h3>
+            <p><strong>Thứ 3, 5, 7:</strong> Tập luyện kỹ thuật (17h00 - 19h00)</p>
+            <p><strong>Chủ nhật:</strong> Giao lưu nội bộ và đấu giải (14h00 - 17h00)</p>
+            <p><strong>Tháng 1 lần:</strong> Thi đấu giao hữu với các CLB khác</p>
+        </div> </div>
+
+        <div class="scroll-container">
+            <div class="scroll-intro">
+                <h3>🎯 Những Khoảnh Khắc Đáng Nhớ</h3>
+                <p>Cuộn xuống để xem các hoạt động nổi bật của BXPC!</p>
+            </div>
+
+            <!-- Dòng 1: 3 ảnh -->
+            <div class="scroll-row triple">
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/d6/27/4c/d6274c4d73ce226ccedc09b4d0946474.jpg" alt="Đơn nữ">
+                    <div class="scroll-caption"> Tập thể thành viên nữ</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/13/dc/10/13dc10055e70896ba45ab6405c2a978b.jpg" alt="Đôi nam nữ">
+                    <div class="scroll-caption">Buổi tụ họp clb</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/f9/88/b1/f988b1b7caf7a8ed594672bd917dc250.jpg" alt="Разминка">
+                    <div class="scroll-caption">Ẵm giải về nhà</div>
+                </div>
+            </div>
+
+            <!-- Dòng 2: 2 ảnh -->
+            <div class="scroll-row double">
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/0c/d5/09/0cd509400466ee17f38d0758eda83551.jpg" alt="Tập luyện">
+                    <div class="scroll-caption">💪 Buổi tập luyện kỹ thuật</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/34/49/37/34493781cff5169ca7739e8cdfcabe48.jpg" alt="Đôi nam">
+                    <div class="scroll-caption">👥 Đôi nam giao hữu</div>
+                </div>
+            </div>
+
+            <!-- Dòng 3: 3 ảnh -->
+            <div class="scroll-row triple">
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/3f/30/07/3f30072ce1b328467bbef16b14be065c.jpg" alt="Đơn nữ">
+                    <div class="scroll-caption">Giao lưu nội bộ</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/0c/f8/34/0cf834ebd6f6b7f805c7ebb0e47faf58.jpg" alt="Đôi nam nữ">
+                    <div class="scroll-caption">Hội nghị diên hồng</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/f4/65/d2/f465d2e02749cca8fdc1dcd3282f1b15.jpg" alt="Разминка">
+                    <div class="scroll-caption">Gặp nhau cuối năm</div>
+                </div>
+            </div>
+
+            <!-- Dòng 4: 2 ảnh -->
+            <div class="scroll-row double">
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/6d/44/82/6d44828351f899364d7dbdc57dd0f275.jpg" alt="Giao lưu">
+                    <div class="scroll-caption">🎉 Giao lưu liên trường</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/9d/7d/36/9d7d36cec7b9dd79ea552897a78e6ae5.jpg" alt="Team photo">
+                    <div class="scroll-caption">Bộ sưu tập huy chương</div>
+                </div>
+            </div>
+
+            <!-- Dòng 5: 3 ảnh -->
+            <div class="scroll-row triple">
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/91/3c/42/913c42062ac4933189e9fa6eefb3dd9c.jpg" alt="Đơn nữ">
+                    <div class="scroll-caption">Thành tích cấp trường</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/3f/8e/8e/3f8e8e8820ec4a5d91a6bae9c6a34b06.jpg" alt="Đôi nam nữ">
+                    <div class="scroll-caption">🤝 Mở đơn xét tuyển</div>
+                </div>
+                <div class="scroll-image-block">
+                    <img src="https://i.pinimg.com/736x/50/6b/39/506b39a5feb864da6d01ec40225a6e75.jpg" alt="Разминка">
+                    <div class="scroll-caption">Tạm biệt nhé old Gen</div>
+                </div>
+            </div>
+
+        <!-- Thành tích -->
+        <div style="margin-top: 60px; padding: 30px; background-color: #E3F2FD; border-left: 5px solid #2196F3; border-radius: 8px;">
+            <h3 style="color: #2196F3; margin-bottom: 20px; font-family: 'Oswald', sans-serif;">🏆 Thành tích nổi bật</h3>
+            <ul style="text-align: left; padding-left: 20px; line-height: 2; color: #333;">
+                <li>🥇 Giải Nhất Giải Cầu lông Học sinh Hà Nội 2024</li>
+                <li>🥈 Giải Nhì Đôi nam liên trường 2024</li>
+                <li>🥉 Giải Ba Đơn nữ cấp quận 2023</li>
+                <li>🏅 Tổ chức thành công 17 buổi giao lưu nội bộ</li>
+                <li>👥 Hơn 20 thành viên tích cực tham gia</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div id="cau-long-contact" class="page">
+        <div class="card">
+            <h2>Hỗ trợ & Giải đáp — CLB cầu lông</h2>
+            <p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; font-style: italic;">
+                Hỡi anh hùng thập phương<br>
+                Ngay tại sân Capital này, Anh em ta kết nghĩa huynh đệ.<br>
+                Tuy không sinh cùng ngày cùng tháng cùng năm,<br>
+                Nhưng nguyện đập cầu cùng năm cùng tháng cùng ngày!<br><br>
+                Lời thề đã thốt ra, vợt đã cầm trên tay, chỉ còn thiếu những "chiến hữu" cùng vào sinh ra tử trên từng mét thảm! 🏸
+            </p>
+            <p>📧 nghuyhoang6666@gmail.com</p>
+            <p>📱 0916468823</p>
+            <div style="margin-top:30px;">
+                <a href="https://forms.gle/nGtV3afQ464Zq9DBA" target="_blank" rel="noopener" style="margin:6px; padding:10px 14px; background:#0077cc; color:#fff; border-radius:6px; text-decoration:none; display:inline-block;">📝 Gửi câu hỏi (Google Form)</a>
+            </div>
+            <div class="social-icons" style="margin-top:20px;">
+                <a href="https://www.facebook.com/profile.php?id=100070533233631" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/club_bxp_/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+// Club data với slogans, màu header VÀ màu body
+const clubData = {
+    'main': {
+        title: 'CÁC CÂU LẠC BỘ TRƯỜNG THPT Xuân Phương',
+        slogan: 'Rèn luyện luyện kỹ năng – phát triển đam mê',
+        headerGradient: 'linear-gradient(to right, #0b0b0b 0%, #4a4a4a 100%)',
+        bodyBackground: 'linear-gradient(to right, #111111 0%, #2e2e2e 100%)',
+        logo: 'https://i.pinimg.com/736x/e3/67/43/e36743b94bb2ba2deb448801aa5a046a.jpg',
+        headerBg:'https://i.pinimg.com/736x/be/e4/e0/bee4e016e0d3f843551f99fc2e8685a6.jpg'
+    },
+    'bong-ro': {
+        title: 'Xuân Phương Basketball Team',
+        slogan: '"Trao niềm tin, nhận tài lộc"',
+        sloganColor: '#fff',
+        headerGradient: 'linear-gradient(to right, #ffd59a 0%, #ffb347 100%)',
+        bodyBackground: 'linear-gradient(to right, #fff7ec 0%, #ffd59a 100%)',
+        logo:'https://i.pinimg.com/736x/ac/ef/58/acef58f621bf2b2e3d9c9673b2653481.jpg',
+        headerBg:'https://i.pinimg.com/736x/ae/4b/71/ae4b719d0819d04221ca2d80f6636ea9.jpg'
+    },
+    'cau-long': {
+        title: 'CLB Cầu lông',
+        slogan: '"BXPC domybest"',
+        sloganColor: '#fff',
+        headerGradient: 'linear-gradient(to right, #2196F3, #64B5F6)',
+        bodyBackground: 'linear-gradient(to right, #e3f2fd 0%, #bbdefb 100%)',
+        logo:'https://i.pinimg.com/736x/68/49/c3/6849c36620bc661b20123312512af661.jpg',
+        headerBg:'https://i.pinimg.com/736x/ab/e0/e5/abe0e55fe2a384c7fd2226a2c415004d.jpg'
+    },
+    'xpec': {
+        title: 'XP English Club',
+        titleColor: '#FF4500',
+        slogan: '"Not only English, we are beyond your XPEC-tations"',
+        sloganColor: '#000000',
+        headerGradient: 'linear-gradient(to right, #98F5FF, #98F5FF)',
+        bodyBackground: 'linear-gradient(to right, #B0E2FF 0%, #E0FFFF 100%)',
+        logo:'https://i.pinimg.com/736x/b6/cf/3c/b6cf3ce8c9bba702ab602c64f95f3cc9.jpg',
+        headerBg:'https://i.pinimg.com/736x/ab/9e/8f/ab9e8f6cfa83e23bb3d327b177c3ac6b.jpg'
+    },
+    'science': {
+        title: 'Xuân Phương Science Club',
+        slogan: '"Haha science and engineering go brrr"',
+        headerGradient: 'linear-gradient(to right, #00BCD4, #4DD0E1)',
+        bodyBackground:'linear-gradient(to right, #A0A0A0 0%, #ECECEC 100%)',
+        logo:'https://i.pinimg.com/736x/ed/1a/af/ed1aaf3111f2f021e4315a3e022a5879.jpg',
+        headerBg:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDPl5x-Fp4B54ejMd92pQ0FIeAgb-65epQwg&s'
+    },
+    'doc-sach': {
+        title: 'XP Book Club',
+        slogan: '"A new chapter begins, but the spirit remains the same"',
+        headerGradient: 'linear-gradient(to right, #4CAF50, #81C784)',
+        bodyBackground: 'linear-gradient(to right, #e8f5e9 0%, #c8e6c9 100%)',
+        logo:'https://i.pinimg.com/736x/0a/ba/7a/0aba7a2c9f0755139506719e253a2fde.jpg',
+        headerBg:'https://i.pinimg.com/736x/e7/50/27/e750270d4a08d83bb39794ed768786b2.jpg'
+    }
+}
+
+function updateHeader(club) {
+    const data = clubData[club];
+    const headerTitle = document.querySelector('header h1');
+    const headerSubtitle = document.querySelector('header p');
+    const header = document.querySelector('header');
+    const headerLogo = document.getElementById('header-logo');
+    
+    if (data) {
+        headerTitle.textContent = data.title;
+        headerTitle.style.color = data.titleColor || '';
+        headerSubtitle.textContent = data.slogan;
+        headerSubtitle.style.color = data.sloganColor || '';
+        
+        // Set HEADER background (separate from body)
+        header.style.background = data.headerGradient;
+        header.style.backgroundImage = '';
+        
+        // Set BODY background (separate from header)
+        if (data.bodyBackground) {
+            document.body.style.background = data.bodyBackground;
+        }
+        
+        // Update logo
+        if (data.logo) {
+            headerLogo.src = data.logo;
+            headerLogo.classList.add('active');
+        } else {
+            headerLogo.classList.remove('active');
+        }
+        
+        // Update header background image (for Book Club)
+        if (data.headerBg) {
+            header.style.backgroundImage = `url('${data.headerBg}')`;
+            header.style.backgroundSize = 'cover';
+            header.style.backgroundPosition = 'center';
+            header.style.backgroundBlendMode = 'overlay';
+        } else {
+            header.style.backgroundImage = 'none';
+        }
+    }
+}
+
+function showPage(club, section) {
+    // 1. Xử lý hiển thị các thành phần chính (Intro, Carousel, Gallery)
+    // Nếu là 'home', hiện lại chúng. Nếu vào CLB, ẩn đi.
+    const isHome = (club === 'home');
+    
+    const introPage = document.getElementById('intro-page');
+    const imageCarousel = document.getElementById('image-carousel');
+    const mainGallery = document.getElementById('main-gallery');
+
+    if (isHome) {
+        if (introPage) introPage.style.display = 'block';
+        if (imageCarousel) imageCarousel.style.display = 'block';
+        if (mainGallery) mainGallery.style.display = 'block';
+        
+        // Reset theme về mặc định khi về trang chủ
+        document.body.className = ''; 
+        
+        // Ẩn tất cả các trang nội dung CLB
+        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+        return; // Thoát hàm vì đã về trang chủ
+    }
+
+    // 2. Nếu vào CLB: Ẩn các thành phần trang chủ
+    if (introPage) introPage.style.display = 'none';
+    if (imageCarousel) imageCarousel.style.display = 'none';
+    if (mainGallery) mainGallery.style.display = 'none';
+
+    // 3. Reset các trang nội dung cũ
+    const allPages = document.querySelectorAll('.page');
+    allPages.forEach(page => page.classList.remove('active'));
+    
+    // 4. GIỮ NGUYÊN TÍNH NĂNG CỦA BẠN: Gán theme & Update Header
+    document.body.className = 'theme-' + club;
+    if (typeof updateHeader === "function") {
+        updateHeader(club);
+    }
+    
+    // 6. Initialize wheel nếu vào trang XPEC activity
+    if (club === 'xpec' && section === 'activity') {
+        setTimeout(() => {
+            initXPECWheel();
+        }, 100);
+    }
+        // 5. Hiển thị trang được chọn
+    const pageId = club + '-' + section;
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.classList.add('active');
+        // Tự động cuộn lên đầu để xem nội dung mới
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function showClub(club) {
+    // Ẩn tất cả các trang
+    const allPages = document.querySelectorAll('.page');
+    allPages.forEach(page => page.classList.remove('active'));
+    
+    // Gán theme cho body
+    document.body.className = 'theme-' + club;
+    
+    // Update header
+    updateHeader(club);
+    
+    // Ẩn trang chủ khi vào câu lạc bộ
+    const introPage = document.getElementById('intro-page');
+    if (introPage) introPage.style.display = 'none';
+}
+
+// Hàm bật/tắt video khi click
+function toggleVideo(element) {
+    const video = element.querySelector('video');
+    if (video) {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    }
+}
+
+function goHome() {
+    // Reset về trang chủ
+    const allPages = document.querySelectorAll('.page');
+    allPages.forEach(page => page.classList.remove('active'));
+    
+    document.body.className = 'theme-main';
+    
+    // Hiển thị trang chủ
+    const introPage = document.getElementById('intro-page');
+    if (introPage) introPage.style.display = 'block';
+    
+    // Hiển thị carousel ảnh và gallery
+    const imageCarousel = document.getElementById('image-carousel');
+    if (imageCarousel) imageCarousel.style.display = 'block';
+    
+    const mainGallery = document.getElementById('main-gallery');
+    if (mainGallery) mainGallery.style.display = 'block';
+    
+    updateHeader('main');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Carousel management
+const carouselIndices = {};
+
+function carouselNext(carouselId) {
+    const membersContainer = document.querySelector(`#${carouselId.replace('-carousel', '')}-member .carousel-container`);
+    const members = membersContainer.querySelectorAll('.carousel-member');
+    const indicatorElement = document.getElementById(`${carouselId}-current`);
+    
+    // Initialize index if not exists
+    if (!carouselIndices[carouselId]) {
+        carouselIndices[carouselId] = 0;
+    }
+    
+    // Get current index
+    let currentIndex = carouselIndices[carouselId];
+    const nextIndex = (currentIndex + 1) % members.length;
+    
+    // Clear all animation classes
+    members.forEach(m => {
+        m.classList.remove('morph-in-right', 'morph-out-left', 'morph-in-left', 'morph-out-right', 'active');
+    });
+    
+    // Add morph-out animation to current
+    members[currentIndex].classList.add('morph-out-left');
+    
+    // Add morph-in animation to next
+    members[nextIndex].classList.add('morph-in-right');
+    members[nextIndex].classList.add('active');
+    
+    // Update index
+    carouselIndices[carouselId] = nextIndex;
+    
+    // Update indicator
+    indicatorElement.textContent = nextIndex + 1;
+}
+
+function carouselPrev(carouselId) {
+    const membersContainer = document.querySelector(`#${carouselId.replace('-carousel', '')}-member .carousel-container`);
+    const members = membersContainer.querySelectorAll('.carousel-member');
+    const indicatorElement = document.getElementById(`${carouselId}-current`);
+    
+    // Initialize index if not exists
+    if (!carouselIndices[carouselId]) {
+        carouselIndices[carouselId] = 0;
+    }
+    
+    // Get current index
+    let currentIndex = carouselIndices[carouselId];
+    const prevIndex = (currentIndex - 1 + members.length) % members.length;
+    
+    // Clear all animation classes
+    members.forEach(m => {
+        m.classList.remove('morph-in-right', 'morph-out-left', 'morph-in-left', 'morph-out-right', 'active');
+    });
+    
+    // Add morph-out animation to current
+    members[currentIndex].classList.add('morph-out-right');
+    
+    // Add morph-in animation to previous
+    members[prevIndex].classList.add('morph-in-left');
+    members[prevIndex].classList.add('active');
+    
+    // Update index
+    carouselIndices[carouselId] = prevIndex;
+    
+    // Update indicator
+    indicatorElement.textContent = prevIndex + 1;
+}
+
+// Thiết lập theme mặc định cho hub chính khi load trang
+window.addEventListener('DOMContentLoaded', function() {
+    document.body.className = 'theme-main';
+    updateHeader('main');
+});
+
+// Intersection Observer for scroll animations
+function observeScrollElements() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.intro-card, .highlight-box').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+/* === MEMBER MODAL FUNCTIONS === */
+function openMemberModal(event) {
+    const card = event.currentTarget;
+    const img = card.querySelector('img');
+    const bioData = card.querySelector('.member-hidden-data');
+    const memberModal = card.closest('.page').querySelector('.member-modal');
+    
+    if (!memberModal) return;
+    
+    const modalImage = memberModal.querySelector('#modalImage') || memberModal.querySelector('#modalImage2') || memberModal.querySelector('[id$="-image"] img');
+    const modalBio = memberModal.querySelector('#modalBio') || memberModal.querySelector('#modalBio2') || memberModal.querySelector('[id$="-bio"]');
+    
+    // Set image
+    if (modalImage) modalImage.src = img.src;
+    
+    // Set bio content
+    if (modalBio) {
+        const bioHTML = bioData.innerHTML;
+        modalBio.innerHTML = bioHTML;
+    }
+    
+    // Show modal
+    memberModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMemberModal(event, modalId = 'memberModal') {
+    const modal = document.getElementById(modalId) || event.currentTarget;
+    if (modal && modal.classList) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+        // Kiểm tra trình duyệt có hỗ trợ không
+        if (!CSS.supports('animation-timeline', 'view()')) {
+            document.querySelector('.warning').style.display = 'block';
+        }
+
+// Data cho các bài post
+const instaPosts = [
+    {
+        image: 'image/bóng rổ/sự kiện/basketball (12).jpg', // Thay bằng đường dẫn ảnh thật của bạn
+        username: 'bxpc_club',
+        caption: '🏀 Trận đấu giao hữu đầy kịch tính...'
+    },
+    {
+        image: 'image/bóng rổ/sự kiện/2.jpg', // Thay bằng đường dẫn ảnh thật của bạn
+        username: 'bxpc_club',
+        caption: '💪 Buổi tập luyện kỹ thuật...'
+    }
+];
+
+// Mở modal
+function openInstaModal(index) {
+    const modal = document.getElementById('instaModal');
+    // Đảm bảo trong HTML của #instaModal có thẻ img id="instaModalImage"
+    const modalImage = document.getElementById('instaModalImage') || document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    const post = instaPosts[index];
+    if(post) {
+        modalImage.src = post.image;
+        modalCaption.textContent = post.caption;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Đóng modal
+function closeInstaModal(event) {
+    const modal = document.getElementById('instaModal');
+    
+    // Chỉ đóng khi click vào background hoặc nút close
+    if (event.target === modal || event.target.classList.contains('modal-close')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// === XPEC 3D WHEEL ===
+const xpecMemberData = [
+    {
+        name: "WELCOME TO XPEC!",
+        title: "Follow our steps to widen your horizons!",
+        desc: "We have itchy feet and a burning desire to explore the world through English!",
+        img: "image/tiếng anh/sự kiện/eng (1).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK ",
+        title: "PART 1: WHAT TO BRING?! ",
+        desc: "Only a few days remain until we experience being a soldier at HOLA’s military education center. Certainly, this will be the first time taking part in such an interesting activity for many students. Perhaps that is why some of you might not know what to bring along. If you are feeling unsure, let XPEC help make your HOLA experience even more integral!",
+        img: "image/tiếng anh/sự kiện/eng (2).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "Don’t forget to bring snacks and drinks. ",
+        desc: " Because of working out for many hours, the amount of energy consumed exceeds that of daily routines.",
+        img: "image/tiếng anh/sự kiện/eng (3).jpg"
+    },
+        {
+        name: "HOLA GUIDEBOOK",
+        title: "With high intensity exercise, personal hygiene is extremely necessary. ",
+        desc: "Don't forget to bring products such as shower gel, shampoo, facial cleanser, toothpaste, facial towels,.. etc.",
+        img: "image/tiếng anh/sự kiện/eng (4).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "Don’t forget to bring electronic devices",
+        desc: "We all want to record every moment of HOLA night, or immerse ourselves in the sea of shimmering flash lights, or simply relax with friends in our free time.",
+        img: "image/tiếng anh/sự kiện/eng (5).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "If you have personal health problems.",
+        desc: "Don’t forget to bring the medicine you often use",
+        img: "image/tiếng anh/sự kiện/eng (6).jpg"
+    },
+        {
+        name: "HOLA GUIDEBOOK",
+        title: "In this exciting trip to HOLA, you should bring some gentle products",
+        desc: "Some people have sensitive skin may not adapt the new conditions in HOLA at the first time. So these skincare products might be a hero to save you and your skin.",
+        img: "image/tiếng anh/sự kiện/eng (7).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "For gorgeous pics and memorable moments recording with your friends",
+        desc: "Don't forget to put on a little makeup to be more confident, my girlies.",
+        img: "image/tiếng anh/sự kiện/eng (8).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "PART 2: SHARING OUR TIPS!!!",
+        desc: "Have you learned any survival tips yet? If not, let XPEC guide you through some useful advice gathered from the experiences of those who’ve been there before!",
+        img: "image/tiếng anh/sự kiện/eng (9).jpg"
+    },
+        {
+        name: "HOLA GUIDEBOOK",
+        title: "Due to limited space and necessity of versatility",
+        desc: " backpack is a truly better option for this trip.",
+        img: "image/tiếng anh/sự kiện/eng (10).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "Because you are exposed to a lot of sunlight",
+        desc: "you should protect your skin by using sunscreen products to avoid sunburn and burns!",
+        img: "image/tiếng anh/sự kiện/eng (11).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "Instead of carrying too much bottles",
+        desc: "these packs will be a better solution for us!",
+        img: "image/tiếng anh/sự kiện/eng (12).jpg" 
+    },
+        {
+        name: "HOLA GUIDEBOOK",
+        title: "Not only do bandages help us to bandage our wounds, they also help people around us",
+        desc: "It’s undeniable that bandage is a necessary product for the trip!",
+        img: "image/tiếng anh/sự kiện/eng (13).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "Sweets are not only a snack, it has more uses than you imagine",
+        desc: "Popping a candy in your mouth when your sugar blood is low will help your feel much better.",
+        img: "image/tiếng anh/sự kiện/eng (14).jpg"
+    },
+    {
+        name: "HOLA GUIDEBOOK",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (15).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (16).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img:  "image/tiếng anh/sự kiện/eng (17).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (18).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (19).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (20).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (21).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (22).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (23).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (24).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (25).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (26).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (27).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (28).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (29).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (30).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (31).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (32).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (33).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (34).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (35).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (36).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (37).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (38).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (39).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (40).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (41).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (42).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (43).jpg"
+    },
+        {
+        name: "Đỗ Mai Anh",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
+        img: "image/tiếng anh/sự kiện/eng (44).jpg"
+    },
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (45).jpg"
+    },
+    {
+        name: "Nguyễn Hoàng Gia Hân",
+        title: "Thành viên XPEC",
+        desc: "Hoạt động trong ban chuyên môn.",
+        img: "image/tiếng anh/sự kiện/eng (46).jpg"
+    },
+    
+    {
+        name: "Nguyễn Ngọc Diệp",
+        title: "Phó chủ nhiệm XPEC",
+        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
+        img: "image/tiếng anh/sự kiện/eng (0).jpg"
+    },
+];
+
+let xpecWheelIndex = 0;
+const XPEC_ANGLE = 40;
+
+function initXPECWheel() {
+    const stage = document.getElementById('wheelStage');
+    if (!stage || stage.children.length > 0) return;
+    
+    xpecMemberData.forEach((member, i) => {
+        const card = document.createElement('div');
+        card.className = 'wheel-card';
+        card.innerHTML = `<img src="${member.img}" alt="${member.name}">`;
+        stage.appendChild(card);
+    });
+    renderXPECWheel();
+}
+
+function rotateWheel(dir) {
+    xpecWheelIndex += dir;
+    renderXPECWheel();
+}
+
+function renderXPECWheel() {
+    const cards = document.querySelectorAll('.wheel-card');
+    if (cards.length === 0) return;
+    
+    const total = xpecMemberData.length;
+    
+    cards.forEach((card, i) => {
+        let dist = i - xpecWheelIndex;
+        while (dist > total/2) dist -= total;
+        while (dist < -total/2) dist += total;
+        
+        const rotateX = -dist * XPEC_ANGLE;
+        const translateZ = Math.abs(dist) * -50;
+        
+        card.style.transform = `rotateX(${rotateX}deg) translateZ(${translateZ}px)`;
+        card.style.zIndex = Math.round(100 - Math.abs(dist) * 20);
+        card.style.opacity = Math.max(0, 1 - Math.abs(dist) * 0.4);
+        card.style.setProperty('--darkness', Math.min(0.8, Math.abs(dist) * 0.5));
+        card.style.pointerEvents = Math.abs(dist) < 0.1 ? 'auto' : 'none';
+    });
+    
+    const idx = (xpecWheelIndex % total + total) % total;
+    const wheelTitleEl = document.getElementById('wheelTitle');
+    const name = xpecMemberData[idx].name;
+    
+    // Hiển thị name với xuống dòng từ \n character
+    wheelTitleEl.innerHTML = name.replace(/\n/g, '<br>');
+    
+    // Nếu name có \n thì cho phép wrap, ngược lại giữ 1 dòng
+    if (name.includes('\n')) {
+        wheelTitleEl.style.whiteSpace = 'pre-wrap';
+    } else {
+        wheelTitleEl.style.whiteSpace = 'nowrap';
+    }
+    
+    document.getElementById('wheelDesc').innerHTML = '<p>' + xpecMemberData[idx].title + '</p><p>' + xpecMemberData[idx].desc + '</p>';
+}
+
+// Đóng modal khi nhấn ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('instaModal');
+        if (modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+});
+</script>
+
+</body>
+</html>
