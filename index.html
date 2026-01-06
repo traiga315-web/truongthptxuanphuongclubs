@@ -1108,13 +1108,11 @@
 
         .wheel-info h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: 36px;
+            font-size: 20px;
             color: #EE4000;
             margin-bottom: 15px;
             text-align: center;
             display: block;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
             white-space: nowrap;
         }
 
@@ -1299,6 +1297,12 @@
             padding: 20px;
             color: white;
             text-align: left;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #science-activity .video-grid .video-item:hover .video-info {
+            opacity: 1;
         }
 
         #science-activity .video-grid .video-info h4 {
@@ -1948,7 +1952,7 @@
             <div class="gallery-item">
                 <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/492200687_960895342893085_8986134283730575762_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGdgpjGWSqYVmy9wduSq5ie1OdpUy5YDRnU52lTLlgNGVyZ-n9uudMP6nyEA-Jb3bc5EjBnfyqXIkDmUQBtUufn&_nc_ohc=1cmKkg9PJ3gQ7kNvwGt_W6u&_nc_oc=AdnvTddkHbrrGqD3jkxkQ00LfXfy6tLDpHa8eZ9RqS0EkrZSwarIAuPhuozixVvE4X4&_nc_zt=23&_nc_ht=scontent.fhan17-1.fna&_nc_gid=qodb7TY8CH7hM5C3IXm1IQ&oh=00_Afq0xgZp4GkMJd3XWtk1CKloKhf7e08Kf_NW4gUd2omEYw&oe=69628A0C" alt="Thành phố">
                 <div class="gallery-caption">
-                    <h4>XPEC</h4>
+                    <h4>XPEC x MEC x IG9</h4>
                     <p>Sắp tới chúng mình sẽ có “vụ nổ lớn” gì vậy 🤯🤯 Hãy cùng đón chờ nhé
 -MEC x XPEC x IG9-</p>
                 </div>
@@ -2360,7 +2364,7 @@ Cậu có phải là người yêu thích tiếng Anh, muốn "level up" khả n
         </div>
     </div>
     <div id="xpec-activity" class="page">
-        <h2 style="text-align: centre; margin-bottom: 1000px;">XPEC - Hoạt động</h2>
+        <h2 style="text-align: centre; margin-bottom: 200px;">XPEC - Hoạt động</h2>
         <div class="wheel-container">
             <div class="wheel-stage" id="wheelStage"></div>
             <div class="wheel-info">
@@ -3500,287 +3504,94 @@ function closeInstaModal(event) {
 // === XPEC 3D WHEEL ===
 const xpecMemberData = [
     {
-        name: "WELCOME TO XPEC!",
-        title: "Follow our steps to widen your horizons!",
-        desc: "We have itchy feet and a burning desire to explore the world through English!",
-        img: "image/tiếng anh/sự kiện/eng (1).jpg"
+        name: "HAPPY MID-AUTUMN FESTIVAL!",
+        title: "The Mid-Autumn Festival is more than just a date on the calendar; it's a time capsule filled with the sights, sounds, and tastes of childhood. The gentle pull of a paper lantern, the sweet aroma of freshly cut mooncake, and the warmth of a family gathered beneath the biggest moon of the year🌕. Our XPEC club members took a moment to share the memories they cherish most- from watching lion dances with friends and new lanterns to sneaking an extra piece of their favorite mooncake filling. As adults, the festival might look a little different, but the core joy of gathering under the full moon remains the same. We hope these memories bring a smile to your face! 🥮❤️",
+        desc: "",
+        img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/557764574_1192650586250531_141097948876221029_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGwfR3v4thov7vPXJjer_UPpRguFPuiPwylGC4U-6I_DFmJMQie7SSnD1KftXVEBK39PuOkAJRD3Pkkrd6QQIVL&_nc_ohc=dhzeBrdua-4Q7kNvwFWIUoH&_nc_oc=AdmN0xlRVbvhFTNMEeCPkW-EuYukub4_voMYie1gQgX8cUOBLjgcobWrMf-LrK1V_Mg&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=suB15C1hkXnHgq1-7PNEKw&oh=00_Afomc75hcxO8ljO_05BNNz_fNDiVrs5l-BqIU-DnWpZyvQ&oe=6963149F"
     },
     {
-        name: "HOLA GUIDEBOOK ",
-        title: "PART 1: WHAT TO BRING?! ",
-        desc: "Only a few days remain until we experience being a soldier at HOLA’s military education center. Certainly, this will be the first time taking part in such an interesting activity for many students. Perhaps that is why some of you might not know what to bring along. If you are feeling unsure, let XPEC help make your HOLA experience even more integral!",
-        img: "image/tiếng anh/sự kiện/eng (2).jpg"
+        name: "NHỮNG NGÔI NHÀ BIẾT MƠ 🌟🏠",
+        title: "🌿 Thuở bé, ai cũng từng vẽ cho mình một “ngôi nhà trong mơ” – nơi có phòng công chúa xinh xắn, chiếc giường tầng để leo trèo, hay góc học tập nhỏ xinh đầy sắc màu. Hôm ấy, Lửa Xanh lại ghé Viện Huyết học - Truyền máu TW, mang đến một tiết học tiếng Anh thật đặc biệt về những đồ vật quen thuộc trong ngôi nhà, trong lớp học. Và rồi, từng bạn nhỏ đã tự tay thiết kế mái nhà của riêng mình, bằng những mảnh nội thất được chúng tớ cắt sẵn. Những căn phòng bé xíu ấy, dù chỉ bằng giấy, nhưng lại chứa đựng cả thế giới mơ mộng của các em. 🌸 “Lớp học hạnh phúc” của chúng tớ vẫn đều đặn diễn ra ít nhất hai lần mỗi tháng, song song cùng những hoạt động chuẩn bị cho sự kiện sắp tới. Vui lắm, khi mỗi lần trở lại lại được thấy nụ cười, ánh mắt mong chờ của các bạn nhỏ, và cả sự ưu ái, tin tưởng mà bệnh viện dành cho. Có lẽ, với chúng tớ, những lượt thả tim hay react bé nhỏ từ các cậu trên mạng xã hội cũng giống như một lời nhắn nhủ: “Tiếp tục nhé, vì đã có người dõi theo”. ",
+        desc: "",
+        img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/543484349_1168387538676836_8736376935152431169_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGK1Mihn71wVfIelPFJt1JETBCaFrcNxAJMEJoWtw3EArW0QncE0TIRB8Vj_CCgvC6gVLwUNxq2IGz4Wuq6KPE2&_nc_ohc=cV0jB9qPMyAQ7kNvwEwV47m&_nc_oc=AdnGkpbhzZ4tnoeLuAAEvbqV6-L1luiGwIyLP00EB7tcBfqmtBr-MpsHuyFJtJdlpYM&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=mBABOyF5pNPPMK5ZCgdUaA&oh=00_Afo-emHhIcnc3sTfPMpAMzk-Rw98OvUR57fhtFFFED-qaQ&oe=69630088"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "Don’t forget to bring snacks and drinks. ",
-        desc: " Because of working out for many hours, the amount of energy consumed exceeds that of daily routines.",
-        img: "image/tiếng anh/sự kiện/eng (3).jpg"
+        name: "BACK TO SCHOOL SEASON",
+        title: "On the school opening ceremony day, the campus suddenly becomes radiant in an indescribable way. It's not because of the vibrant flags and flowers, but because of the familiar and beloved sight of female students in their pristine white Áo dài. This simple yet elegant garment honors the gentle and modest beauty of their school age. With each step they take, the Áo dài flutters in the breeze, painting a picture of pure and heartwarming youth. ",
+        desc: "",
+        img: "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/543090081_1165585732290350_8138047327971105381_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHDq5f8vS1-IWEHmYgh4pd_eLjASS99blx4uMBJL31uXHrdU6ZnbZk6qnH08-ai4ZtjW3uIWPV0rzE6JmGCjcMV&_nc_ohc=wHHbaO8kpBQQ7kNvwFwx4Qa&_nc_oc=Admuw9Kh1fET-g7L8Mqk6v7CNqQgkX6sjZRDfYFq6oMeyEcHEoMQ1M7MCwmY3mcHf9I&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=mBABOyF5pNPPMK5ZCgdUaA&oh=00_AfoRoBHFRzrA1jziJc5hCPQwlTA7g9tzdYagbWJnwzto_g&oe=6963089D"
     },
         {
-        name: "HOLA GUIDEBOOK",
-        title: "With high intensity exercise, personal hygiene is extremely necessary. ",
-        desc: "Don't forget to bring products such as shower gel, shampoo, facial cleanser, toothpaste, facial towels,.. etc.",
-        img: "image/tiếng anh/sự kiện/eng (4).jpg"
+        name: "A GLIMPSE OF PROUD- VIETNAM’S NATIONAL DAY 2025 🇻🇳🇻🇳🇻🇳",
+        title: "Ngày 2/9 là ngày của sự tự do, của độc lập, của những ước mơ được bay cao. Ý nghĩa của ngày này đã được Chủ tịch Hồ Chí Minh khẳng định tại Quảng trường Ba Đình vào ngày 2/9/1945.  ",
+        desc: "",
+        img: "https://scontent.fhan14-5.fna.fbcdn.net/v/t39.30808-6/542739343_1164423785739878_5439501538651588322_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF227GU6Kvlc6nvIIVFDkywskW3Hmw2KKmyRbcebDYoqUrp34Tp9eHcoDqD0FAdjI_-g8No9XrtZsJ1Mn6h5D8r&_nc_ohc=aqmQK0SVwA0Q7kNvwEJl6Cl&_nc_oc=AdmIYrX-C3h-k7dTCIjW15y8yB9QDNuLehuucskTX-2YCG1SEmFqFvbUWWMWeEXNwC4&_nc_zt=23&_nc_ht=scontent.fhan14-5.fna&_nc_gid=f5SYF0TofG0z4hEq6D5eYA&oh=00_AfrTVswfMLRd-TxvEI3ekRD9ICieZ1PGyweZ2IoF0CC-Iw&oe=6962FC3B"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "Don’t forget to bring electronic devices",
-        desc: "We all want to record every moment of HOLA night, or immerse ourselves in the sea of shimmering flash lights, or simply relax with friends in our free time.",
-        img: "image/tiếng anh/sự kiện/eng (5).jpg"
+        name: "A LITTLE GREEN MOMENT ON A STORMY DAY 🌳🌧️",
+        title: "Before the storm hit, in a small room filled with laughter, Lửa Xanh and pediatric patients at the National Institute of Hematology and Blood Transfusion had created trully unforgettable moments. Cardboard sheets, seemingly at the end of their use, were transformed into joyful wind chimes by the skillful hands and sparkling eyes of the little kids. Some kids busily made one. Others patiently crafted three or four to give to their father, mother, brother, or sister. Each creation seemed to encapsulate a tiny piece of affection, sent to their loved ones. ",
+        desc: "",
+        img: "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/531992095_1149501203898803_7759078506629479212_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH7crDP_sn-pIE3FqGXWwLGUXLmq0G8-vdRcuarQbz69_paR3qCPMlzKnC8OmoMMBrA3p8aWOxbsnx560nHorA3&_nc_ohc=qb10KE9bCWgQ7kNvwHLN2gn&_nc_oc=AdlhCtb2aTaMPzRhj22_KbTYBHA4pGpw8vYoYqv1tIqyacrEGWQGqaWXhc5Z_N8nJI8&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=6dTrdf9j7EQeu3TSl_Ez0Q&oh=00_Afrmsv_nbkeq8vqgJFB-0-Pa71AQa4YmlRfS9tZKHyP71A&oe=696312FF"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "If you have personal health problems.",
-        desc: "Don’t forget to bring the medicine you often use",
-        img: "image/tiếng anh/sự kiện/eng (6).jpg"
+        name: "🚀CHÚNG MÌNH CÓ DIỆN MẠO MỚI RÙI NÈ💙",
+        title: "",
+        desc: "",
+        img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/520543651_1131242125724711_3181371454302044192_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGEUR7WRfn0YFOlPaeV5hTSF3GssB7-WjgXcaywHv5aOGCpK8WEW_SSfWbE9Tw4HhfUq9gKNK6aw3TC3fUbYPx-&_nc_ohc=CyRHj662dg8Q7kNvwF7DuV5&_nc_oc=Admtd6Gu_5vPDqWXghUnevbCLHqtUDxbsvrIMpPFVPpf4VrQQgax6AOPGirFH7uE4gw&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=6dTrdf9j7EQeu3TSl_Ez0Q&oh=00_Afqia4SHqZ2Ip71MKsdCcwU-rJAyNjNNtLqbpk4ufsYrcA&oe=69630DE7"
     },
         {
-        name: "HOLA GUIDEBOOK",
-        title: "In this exciting trip to HOLA, you should bring some gentle products",
-        desc: "Some people have sensitive skin may not adapt the new conditions in HOLA at the first time. So these skincare products might be a hero to save you and your skin.",
-        img: "image/tiếng anh/sự kiện/eng (7).jpg"
+        name: "🎉 CLB TIẾNG ANH XPEC “MỞ CỬA” ĐÓN THÀNH VIÊN GEN 6!",
+        title: "",
+        desc: "",
+        img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/522749654_1129647539217503_1527799055553220110_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE2eBs-f6VFYrVlORH4Cfz1-6Z0qfxe60v7pnSp_F7rS8G8_k3gJQ_uUMZtm7taXzS3AJr3A4fU5kB_xLOx-syJ&_nc_ohc=InWBbpHnjt0Q7kNvwFMWNYz&_nc_oc=AdkaS7YHXB0yi8EqsIyw-g_VT5SkX0RvAB1zrGm1NTlPsCq5tYHI5s37wrOhQb1jQ04&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=tf_BPx25UnJWO5V5jaGJGg&oh=00_Afr79KKGiIGahGJx7myylAcfjIW3BhuqgQRGfi_YuQJchg&oe=69632AF4"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "For gorgeous pics and memorable moments recording with your friends",
-        desc: "Don't forget to put on a little makeup to be more confident, my girlies.",
-        img: "image/tiếng anh/sự kiện/eng (8).jpg"
+        name: "KỶ NIỆM 50 NĂM GIẢI PHÓNG MIỀN NAM, THÔNG NHẤT ĐẤT NƯỚC 🇻🇳",
+        title: "XPEC- những người trẻ của thời đại mới, thời đại phát triển, mãi khắc ghi công lao to lớn của cha ông và các thế hệ đi trước. Với lòng nhiệt huyết của tuổi trẻ, XPEC không ngừng học tập và cống hiến, góp phần vào công cuộc xây dựng đất nước ngày càng giàu đẹp, phồn vinh. ",
+        desc: "",
+        img: "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/494442108_1069799235202334_3587361169661300797_n.jpg?stp=cp6_dst-jpg_s1080x2048_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeELeO6RPxuAsxIKwUXe-g_IcZnBFkOwAIpxmcEWQ7AAigM6BGobz4S01j5MVquvGTolV_XIfyNFGFR2ltDCK-58&_nc_ohc=YB67aQZWTZ8Q7kNvwF-DlTb&_nc_oc=AdmDSe0Vsbdpg5DAJpjIAEGUYbCAiFTTScLeF58VFIMdEUpFugqxv46fznV10HJ8ys0&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=PkRZy6P7byyN0He0GbeAcA&oh=00_AfrHhdLI5nvgekvhHyFzxQ6Pi54UB_bimdypyLS_QAtmfg&oe=696326F6"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "PART 2: SHARING OUR TIPS!!!",
-        desc: "Have you learned any survival tips yet? If not, let XPEC guide you through some useful advice gathered from the experiences of those who’ve been there before!",
-        img: "image/tiếng anh/sự kiện/eng (9).jpg"
+        name: "MỞ ĐƠN GÂY QUỸ HOA NIÊN 2025",
+        title: " Loa..loa loa  HOA NIÊN mang đến cho các bạn những thông tin mới đây 📣📣📣. Trong không khí cả nước đang hòa chung 1 nhịp đập trái tim, hướng về lễ kỷ niệm 50 năm ngày giải phóng miền Nam, thống nhất đất nước, và cũng là một phần để gây quỹ cho hoạt động tri ân khối 12 của HOA NIÊN sắp tới.",
+        desc: "",
+        img: "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/493275960_1067639445418313_4167967866181177664_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGDk5nvBl5kQld624wzTzSWbteJNLo_4ftu14k0uj_h--oslBL4mEvJF4BC6PecrMg6c3hBUESCrse2OAKoTyR8&_nc_ohc=iDEIhdy-YhoQ7kNvwGbeRXi&_nc_oc=Adla8oVOzCIiRRCyXWDQrA24j4UdY_pfzc9NZLKtKcpm7_yIENav8kXCJqCzRTukD8U&_nc_zt=23&_nc_ht=scontent.fhan14-2.fna&_nc_gid=PkRZy6P7byyN0He0GbeAcA&oh=00_AfpY78Rizep6d1q2CG6kFbtC6ZMIkhoo5mPPdOVJE2AT9A&oe=69631A34"
     },
         {
-        name: "HOLA GUIDEBOOK",
-        title: "Due to limited space and necessity of versatility",
-        desc: " backpack is a truly better option for this trip.",
-        img: "image/tiếng anh/sự kiện/eng (10).jpg"
+        name: "KELLA IN LIFE",
+        title: "Đoàn trường THPT Xuân Phương đã xuất sắc đạt được giải nhất cuộc thi KELLA IN LIFE do Tập đoàn Kella tổ chức với chủ đề 'Hành trình xanh - Vì một Việt Nam xanh'. Cuộc thi nhằm khuyến khích học sinh, sinh viên tìm hiểu và lan tỏa các thông điệp về bảo vệ môi trường và phát triển bền vững thông qua các sản phẩm sáng tạo như video, tranh vẽ, bài viết,...",
+        desc: "",
+        img: "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/610899653_877056878361029_3776696150787145669_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHx88gZtTAoPA-mFaK4pgqX0k21zmL0KUTSTbXOYvQpRI3CJB_HMhbDWhAFd0H3wZ3EGcdm9cS5AnLBKdyELp07&_nc_ohc=uD-ezh2iwCUQ7kNvwEldDvx&_nc_oc=AdlB-hwEQR5VG6fSUaRkFVQ88oocyfIOmsrbSS92lFyK8bPQw_-2Mh6OdnkPSyXtuKc&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=BBIGMRLofVOXlrpVNXQ4bA&oh=00_Afp_ikQbxDOOx-15wL21fyzwrudXZn87XUv0IcFv694XYg&oe=69630699"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "Because you are exposed to a lot of sunlight",
-        desc: "you should protect your skin by using sunscreen products to avoid sunburn and burns!",
-        img: "image/tiếng anh/sự kiện/eng (11).jpg"
+        name: "CUỘC THI TRANH LUẬN",
+        title: "Các bạn học sinh trong và ngoài câu lạc bộ tham gia tranh luận bằng những câu hỏi tiếng Anh xoay quanh các chủ đề quen thuộc trong cuộc sống hằng ngày. Bên cạnh đó, các bạn còn được thử sức với những câu hỏi tình huống nhằm giúp các bạn rèn luyện kỹ năng phản xạ và giao tiếp tiếng Anh một cách tự nhiên hơn.",
+        desc: "",
+        img: "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/611006424_877056665027717_4060186433545047816_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEhPoACoedacLnzyfEn1Qlj_JbPA3t9C638ls8De30LrRLPpwPIahPwjLA4b9s8Bw-R-0RB8MdyEcsCtmKqTgd1&_nc_ohc=8s3Isj1uxukQ7kNvwFgzup-&_nc_oc=AdlTzIabAIim9-njiUh43vb2qfZ-0Su7cex8PgHECm7ZYzhIfSYzQy24YIf7RYUAXeM&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=iJfr7bNn_vfJF-Vlkc-VGA&oh=00_AfrHqcirRRqFfFb2GKFVQvoiOLX1EyiJM-bEZJrj4NqQ9A&oe=69630426",
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "Instead of carrying too much bottles",
-        desc: "these packs will be a better solution for us!",
-        img: "image/tiếng anh/sự kiện/eng (12).jpg" 
+        name: "HAPPY INTERNATIONAL WOMEN’S DAY 🌹💗",
+        title: "After a longgggggggg time together, XPEC has gradually been improved by special 'pieces'. Above all, women, from the 'leader' who has been leading the club, to adorable, beautiful female members ",
+        desc: "",
+        img: "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/488862472_1051643973684527_5606568623936728301_n.jpg?stp=cp6_dst-jpg_p960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGkg8gKfVKfZQzOM2j3KAIJpteSKzh1wtCm15IrOHXC0ERCk_0V_-Tty4QCb0_xJp1Z-MoAQEx943FakOieni-V&_nc_ohc=kD9OmYcjJy8Q7kNvwG0O2Qy&_nc_oc=AdmX8MESE4RdiUm8Xr4-g_NKWvESG_UT0RTCYDB-qgj_YqF4hXWaNGw7YUz4xXfgy-E&_nc_zt=23&_nc_ht=scontent.fhan14-1.fna&_nc_gid=7bF2FE3gs2SsNFW7c019cg&oh=00_AfocFDBibR9Sj7r_W0JQLIwlR5XxbpkQWAHyvagn_pj74g&oe=696323A2" 
     },
         {
-        name: "HOLA GUIDEBOOK",
-        title: "Not only do bandages help us to bandage our wounds, they also help people around us",
-        desc: "It’s undeniable that bandage is a necessary product for the trip!",
-        img: "image/tiếng anh/sự kiện/eng (13).jpg"
+        name: "HAPPY VALENTINE’S DAY 💌💘",
+        title: "Hi there, how was your Valentine's Day? Valentine's Day is an opportunity for lovers to express love through words, actions, and meaningful gifts. It is a day for couples to show romance and passion in love. Not only that, it is also an opportunity for us to show love and gratitude to our loved ones. ",
+        desc: "",
+        img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/484547694_1036907945158130_4931278843754774489_n.jpg?stp=dst-jpg_p960x960_tt6&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGpM9ceQ0l6qj3c66FfP9ItgdVSZEX9w-WB1VJkRf3D5bbPPV6V-KKjDGt8fx4dsMdrW7RAFDFmj2xSqbqiMUNR&_nc_ohc=jkqVX7qG4RkQ7kNvwEy165X&_nc_oc=AdmJULVs3FXFuwOxL1SJhLqaTxa5gyS3CNWcf1XWjf9D1WMbCrpymPGfJ2YQvM_zrbA&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=aSj7577zwYnD-V2fuhcKIQ&oh=00_Afr7H2m-kFuStzHaSaVY32cnk9DpNKofpgbRS4cY6HwqHw&oe=696318F1"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "Sweets are not only a snack, it has more uses than you imagine",
-        desc: "Popping a candy in your mouth when your sugar blood is low will help your feel much better.",
-        img: "image/tiếng anh/sự kiện/eng (14).jpg"
+        name: "DRAW A “FORTUNE TELLING” WITH XPEC 🧧",
+        title: "Hello there! The old year has passed, opened a new door to the year of the Snake filled with the opportunities waiting. Are you curious about what is waiting for you in this new year? Let XPEC draw a 'fortune telling' and see the explanation right below the comment section!!",
+        desc: "",
+        img: "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/485148282_1036776325171292_7097098246856039387_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEbUVDXuu8pF889NfZWpYSX6BOkf9otdlvoE6R_2i12W4REwybJbvOf6xby4VcSoo9k2ZejtqMH36Q3aSO3hxwu&_nc_ohc=J9-d-JQ_x0IQ7kNvwHGvlP-&_nc_oc=Adk4l3Elhejfk_JD57eThmSNKeCXhCaSYncLTjwiY0HZxxovB5KmMdBso_bQnasBhuA&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&_nc_gid=aSj7577zwYnD-V2fuhcKIQ&oh=00_AfoqPaGt1cGCX-fWHWdI4unjr11fPaMaDeA_xPexnIey4Q&oe=69632590"
     },
     {
-        name: "HOLA GUIDEBOOK",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (15).jpg"
-    },
-        {
-        name: "Đỗ Mai Anh",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (16).jpg"
-    },
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img:  "image/tiếng anh/sự kiện/eng (17).jpg"
-    },
-    {
-        name: "Nguyễn Hoàng Gia Hân",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (18).jpg"
-    },
-        {
-        name: "Đỗ Mai Anh",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (19).jpg"
-    },
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (20).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (21).jpg"
-    },
-        {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (22).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (23).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (24).jpg"
-    },
-        {
-        name: "Đỗ Mai Anh",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (25).jpg"
-    },
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (26).jpg"
-    },
-    {
-        name: "Nguyễn Hoàng Gia Hân",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (27).jpg"
-    },
-        {
-        name: "Đỗ Mai Anh",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (28).jpg"
-    },
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (29).jpg"
-    },
-    {
-        name: "Nguyễn Hoàng Gia Hân",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (30).jpg"
-    },
-        {
-        name: "Đỗ Mai Anh",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (31).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (32).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (33).jpg"
-    },
-        {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (34).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (35).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (36).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (37).jpg"
-    },
-        {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (38).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (39).jpg"
-    },
-    {
-        name: "Kella in life",
-        title: "Joining Kella In Life 2025 was an unforgettable experience for our team.",
-        desc: "From the first idea to the final moment, we learned, grew, and supported each other a lot. There were challenges and pressure, but also so much excitement and joy. We’re truly grateful to be part of this journey.",
-        img: "image/tiếng anh/sự kiện/eng (40).jpg"
-    },
-        {
-        name: "Kella in life",
-        title: "Let’s have a party and have a blast 😋",
-        desc: ". This win gives us every reason to smile, relax, and enjoy the moment together. Cheers to teamwork, success, and an unforgettable victory!",
-        img: "image/tiếng anh/sự kiện/eng (41).jpg"
-    },
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (42).jpg"
-    },
-    {
-        name: "Nguyễn Hoàng Gia Hân",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (43).jpg"
-    },
-        {
-        name: "Đỗ Mai Anh",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức sự kiện, phát triển cộng đồng.",
-        img: "image/tiếng anh/sự kiện/eng (44).jpg"
-    },
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (45).jpg"
-    },
-    {
-        name: "Nguyễn Hoàng Gia Hân",
-        title: "Thành viên XPEC",
-        desc: "Hoạt động trong ban chuyên môn.",
-        img: "image/tiếng anh/sự kiện/eng (46).jpg"
-    },
-    
-    {
-        name: "Nguyễn Ngọc Diệp",
-        title: "Phó chủ nhiệm XPEC",
-        desc: "Tổ chức các buổi luyện tập tiếng Anh sáng tạo.",
-        img: "image/tiếng anh/sự kiện/eng (0).jpg"
+        name: "MERRY CHRISTMAS 🎁🎄❄️",
+        title: "As Christmas approaches, we would like to send our best wishes to everyone. May this festive season be filled with joy, laughter, and happiness with your family and loved ones. Wishing everyone a peaceful, warm Christmas and a New Year full of health, success, and serenity. Let’s cherish these meaningful moments together, spreading love and sharing kindness with those around us! 🎄",
+        desc: "",
+        img: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/484837128_1036700845178840_5110406355875070283_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeENEMOR735TGLk-7NbNPW2XWFL4V_3r77JYUvhX_evvsqWrK4QuluSD9ITMe3hlD8ZLXku_fuD7SGScmfuSzHUB&_nc_ohc=iaHlarqMUDQQ7kNvwEtTcg_&_nc_oc=Adk8Lx_mNejL31pP0rvdjQbjRgiFZi_0u6R1unXsAiun67DiO97bLtjm_ZGjmgRme-o&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=4YskDeiBdghQuRaMBv7tAw&oh=00_Afplj6o-JeKliBFx7atT3Cy2FSLWhvPFkAxmAPvnfDrtqA&oe=696304AD"
     },
 ];
 
@@ -3830,10 +3641,10 @@ function renderXPECWheel() {
     const wheelTitleEl = document.getElementById('wheelTitle');
     const name = xpecMemberData[idx].name;
     
-    // Hiển thị name với xuống dòng từ \n character
+    // Hiển thị name và xử lý xuống dòng từ \n character
     wheelTitleEl.innerHTML = name.replace(/\n/g, '<br>');
     
-    // Nếu name có \n thì cho phép wrap, ngược lại giữ 1 dòng
+    // Nếu name có \n thì cho pre-wrap, ngược lại giữ nowrap
     if (name.includes('\n')) {
         wheelTitleEl.style.whiteSpace = 'pre-wrap';
     } else {
